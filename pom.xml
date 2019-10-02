@@ -11,7 +11,7 @@
 	<groupId>adaseptimaback</groupId>
 	<artifactId>Netflis2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>Netflis2</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
