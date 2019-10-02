@@ -1,4 +1,4 @@
-package Netflis20.demo;
+package adaseptimaback.Netflis2;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

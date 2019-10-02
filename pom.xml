@@ -8,8 +8,8 @@
 		<version>2.1.9.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>Netflis2.0</groupId>
-	<artifactId>demo</artifactId>
+	<groupId>adaseptimaback</groupId>
+	<artifactId>Netflis2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>demo</name>
 	<description>Demo project for Spring Boot</description>
