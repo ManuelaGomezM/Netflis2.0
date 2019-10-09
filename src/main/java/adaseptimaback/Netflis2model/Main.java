@@ -1,4 +1,4 @@
-package adaseptimaback.Netflis2;
+package adaseptimaback.Netflis2model;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

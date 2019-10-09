@@ -1,4 +1,4 @@
-package adaseptimaback.Netflis2;
+package adaseptimaback.Netflis2model;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
