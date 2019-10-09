@@ -14,25 +14,25 @@ public class Capitulo extends UnidadDeContenido {
     public Capitulo(Integer numeroDeCapitulo, Integer duracionDeCapitulo, Temporada temporada){
         super();
         this.numeroDeCapitulo=numeroDeCapitulo;
-        this.duracionDeCapitulo=duracionDeCapitulo;
+        this.setDuracionDeCapitulo(duracionDeCapitulo);
         this.temporada=temporada;
 
     }
 
     public void setActoresInvitados (Actor unActorInvitado){
 
-        this.actoresInvitados.add(unActorInvitado);
+        this.getActoresInvitados().add(unActorInvitado);
     }
 
     public Boolean actuo(Actor actor){
 
-        return actoresInvitados.contains(actor);
+        return getActoresInvitados().contains(actor);
     }
 
 
     public Integer cuantoDura() {
 
-        return duracionDeCapitulo;
+        return getDuracionDeCapitulo();
     }
 
 
@@ -44,5 +44,18 @@ public class Capitulo extends UnidadDeContenido {
     public void setNumeroDeCapitulo(Integer numeroDeCapitulo) {
 
         this.numeroDeCapitulo = numeroDeCapitulo;
+    }
+
+    public List<Actor> getActoresInvitados() {
+        return actoresInvitados;
+    }
+
+
+    public Integer getDuracionDeCapitulo() {
+        return duracionDeCapitulo;
+    }
+
+    public void setDuracionDeCapitulo(Integer duracionDeCapitulo) {
+        this.duracionDeCapitulo = duracionDeCapitulo;
     }
 }
