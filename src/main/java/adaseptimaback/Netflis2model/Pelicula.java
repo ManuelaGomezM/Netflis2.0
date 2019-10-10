@@ -1,4 +1,4 @@
-package adaseptimaback.Netflis2;
+package adaseptimaback.Netflis2model;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,30 +1,35 @@
-package adaseptimaback.Netflis2;
+package adaseptimaback.Netflis2model;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Capitulo extends UnidadDeContenido {
 
+public class Capitulo extends UnidadDeContenido {
     private Integer numeroDeCapitulo;
-    private List<Actor> actoresInvitados= new ArrayList<>();
+    private List<Actor> actoresInvitados = new ArrayList<>();
     private Integer duracionDeCapitulo;
     private Temporada temporada;
     private Serie serie;
 
-    public Capitulo(Integer numeroDeCapitulo, Integer duracionDeCapitulo, Temporada temporada){
-        super();
-        this.numeroDeCapitulo=numeroDeCapitulo;
+
+
+
+    public Capitulo(Integer numeroDeCapitulo, Integer duracionDeCapitulo, Temporada temporada, Serie serie) {
+        this.numeroDeCapitulo = numeroDeCapitulo;
         this.setDuracionDeCapitulo(duracionDeCapitulo);
-        this.temporada=temporada;
+        this.temporada = temporada;
+        this.setSerie(serie);
+        this.setGenero(this.serie.getGenero());
 
     }
 
-    public void setActoresInvitados (Actor unActorInvitado){
+
+    public void setActoresInvitados(Actor unActorInvitado) {
 
         this.getActoresInvitados().add(unActorInvitado);
     }
 
-    public Boolean actuo(Actor actor){
+    public Boolean actuo(Actor actor) {
 
         return getActoresInvitados().contains(actor);
     }
@@ -46,6 +51,10 @@ public class Capitulo extends UnidadDeContenido {
         this.numeroDeCapitulo = numeroDeCapitulo;
     }
 
+    //public String getGenero() {
+        //return this.serie.getGenero();
+   // }
+
     public List<Actor> getActoresInvitados() {
         return actoresInvitados;
     }
@@ -58,4 +67,21 @@ public class Capitulo extends UnidadDeContenido {
     public void setDuracionDeCapitulo(Integer duracionDeCapitulo) {
         this.duracionDeCapitulo = duracionDeCapitulo;
     }
+
+
+
+
+
+    public Serie getSerie() {
+            return serie;
+        }
+
+
+
+    public void setSerie(Serie serie) {
+        this.serie = serie;
+
+    }
+
+
 }

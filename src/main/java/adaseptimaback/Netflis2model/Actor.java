@@ -1,4 +1,4 @@
-package adaseptimaback.Netflis2;
+package adaseptimaback.Netflis2model;
 
 public class Actor {
 
