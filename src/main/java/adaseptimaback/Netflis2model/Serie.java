@@ -20,6 +20,7 @@ public class Serie implements Contenido {
     public void setActoresFijosDeLaSerie (Actor unActor){
         this.actoresFijosDeLaSerie.add(unActor);
     }
+
     public Boolean actuo(Actor actor){
 
         return actoresFijosDeLaSerie.contains(actor);
@@ -41,16 +42,17 @@ public class Serie implements Contenido {
                 .allMatch(temporada -> temporada.vistoCompleto(unUsuario));
 
     }
-
-    public Integer cuantoDura(){
-        return duracionDeTodaLaSerieEnMinutos();
-    }
-
     public Integer duracionDeTodaLaSerieEnMinutos() {
         return temporadas.stream()
                 .mapToInt(t -> t.cuantosMinutosDuraLatemporadaCompleta())
                 .sum();
     }
+
+    public Integer cuantoDura(){
+        return duracionDeTodaLaSerieEnMinutos();
+    }
+
+
 
     public String getGenero() {
         return genero;

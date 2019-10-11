@@ -1,4 +1,4 @@
-package adaseptimaback.Netflis2;
+package adaseptimaback.Netflis2model;
 import adaseptimaback.Netflis2model.Actor;
 import adaseptimaback.Netflis2model.Pelicula;
 import adaseptimaback.Netflis2model.Usuario;
@@ -64,6 +64,20 @@ public class PeliculaTest {
         when(Vicky.contenidoFueVisto(Titanic)).thenReturn(true);
         assertTrue(Titanic.vistoCompleto(Vicky));
     }
+
+    /**actuo**/
+
+    @Test
+
+    void actuoTest (){
+
+        Inception.setActoresDePeliculas(LeonardoDiCaprio);
+        assertTrue(Inception.actuo(LeonardoDiCaprio));
+
+
+    }
+
+
 
 
 
