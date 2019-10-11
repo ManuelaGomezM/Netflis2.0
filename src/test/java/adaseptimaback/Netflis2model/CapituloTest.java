@@ -41,7 +41,7 @@ public class CapituloTest {
     @Test
     void actuoTest() {
 
-        when(Lost.getGenero()).thenReturn("miterio");
+
         capitulo1.setActoresInvitados(EvagelineL);
         assertTrue(capitulo1.actuo(EvagelineL));
 
@@ -56,6 +56,19 @@ public class CapituloTest {
 
         capitulo1.setDuracionDeCapitulo(45);
         assertEquals(45, capitulo1.cuantoDura().intValue());
+    }
+
+    /**generodeCapitulo**/
+
+    @Test
+
+    void generoDeCapitulo (){
+
+        when(Sherlock.getGenero()).thenReturn("miterio");
+        capitulo1.setSerie(Sherlock);
+        assertEquals("miterio",capitulo1.generoDeSerie());
+
+
     }
 
 
