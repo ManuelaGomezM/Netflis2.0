@@ -15,8 +15,6 @@ public class Capitulo extends UnidadDeContenido {
     public String generoDeSerie(){
         return this.getSerie().getGenero();
     }
-
-
     public Capitulo(Integer numeroDeCapitulo, Integer duracionDeCapitulo, Temporada temporada, Serie serie){
         this.numeroDeCapitulo=numeroDeCapitulo;
         this.duracionDeCapitulo=duracionDeCapitulo;
@@ -24,6 +22,7 @@ public class Capitulo extends UnidadDeContenido {
         this.setSerie(serie);
         this.setGenero(generoDeSerie());
     }
+
 
 
     public void setActoresInvitados (Actor unActorInvitado){
@@ -54,10 +53,12 @@ public class Capitulo extends UnidadDeContenido {
     }
 
     public Serie getSerie() {
+
         return serie;
     }
 
     public void setSerie(Serie serie) {
+
         this.serie = serie;
     }
 }

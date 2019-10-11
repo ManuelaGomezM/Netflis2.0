@@ -1,8 +1,8 @@
 package adaseptimaback.Netflis2model;
 
 public class UnidadDeContenido implements Contenido {
-    public String genero;
-    private String titulo;
+    protected String genero;
+
 
     public UnidadDeContenido(){
 
@@ -36,11 +36,5 @@ public class UnidadDeContenido implements Contenido {
         this.duracion = duracion;
     }
 
-    public String getTitulo() {
-        return titulo;
-    }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
 }
