@@ -33,6 +33,7 @@ public class Pelicula extends UnidadDeContenido {
 
 
     public boolean vistoCompleto(Usuario unUsuario) {
+
         return unUsuario.contenidoFueVisto(this);
     }
 

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Capitulo extends UnidadDeContenido {
     private Integer numeroDeCapitulo;
-    private List <Actor> actoresInvitados= new ArrayList<>();
+    private List<Actor> actoresInvitados = new ArrayList<>();
     private Integer duracionDeCapitulo;
     private Temporada temporada;
     private Serie serie;
@@ -15,30 +15,32 @@ public class Capitulo extends UnidadDeContenido {
     public String generoDeSerie(){
         return this.getSerie().getGenero();
     }
+
+
     public Capitulo(Integer numeroDeCapitulo, Integer duracionDeCapitulo, Temporada temporada, Serie serie){
         this.numeroDeCapitulo=numeroDeCapitulo;
         this.duracionDeCapitulo=duracionDeCapitulo;
         this.temporada=temporada;
         this.setSerie(serie);
-        this.setGenero(generoDeSerie());
+        this.setGenero(this.serie.getGenero());
+
     }
 
 
+    public void setActoresInvitados(Actor unActorInvitado) {
 
-    public void setActoresInvitados (Actor unActorInvitado){
-
-        this.actoresInvitados.add(unActorInvitado);
+        this.getActoresInvitados().add(unActorInvitado);
     }
 
-    public Boolean actuo(Actor actor){
+    public Boolean actuo(Actor actor) {
 
-        return actoresInvitados.contains(actor);
+        return getActoresInvitados().contains(actor);
     }
 
 
     public Integer cuantoDura() {
 
-        return duracionDeCapitulo;
+        return getDuracionDeCapitulo();
     }
 
 
@@ -52,13 +54,37 @@ public class Capitulo extends UnidadDeContenido {
         this.numeroDeCapitulo = numeroDeCapitulo;
     }
 
-    public Serie getSerie() {
+    //public String getGenero() {
+        //return this.serie.getGenero();
+   // }
 
-        return serie;
+    public List<Actor> getActoresInvitados() {
+        return actoresInvitados;
     }
+
+
+    public Integer getDuracionDeCapitulo() {
+        return duracionDeCapitulo;
+    }
+
+    public void setDuracionDeCapitulo(Integer duracionDeCapitulo) {
+        this.duracionDeCapitulo = duracionDeCapitulo;
+    }
+
+
+
+
+
+    public Serie getSerie() {
+            return serie;
+        }
+
+
 
     public void setSerie(Serie serie) {
-
         this.serie = serie;
+
     }
+
+
 }

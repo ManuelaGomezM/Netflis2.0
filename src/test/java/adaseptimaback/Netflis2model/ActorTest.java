@@ -10,8 +10,8 @@ import static org.mockito.Mockito.*;
 
 public class ActorTest {
 
-    private Contenido Inception ;
-    private Contenido Endgame ;
+    private Pelicula Inception ;
+    private Pelicula Endgame ;
     private Actor RobertDowneyJr;
 
     @BeforeEach
