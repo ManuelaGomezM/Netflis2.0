@@ -1,22 +1,21 @@
 package adaseptimaback.Netflis2model;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Usuario {
+public class Usuario implements Serializable {
+    private Integer id;
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
-
 
     public void yaLoViste(Contenido unContenido) {
         this.contenidosVistosPorUsuario.add(unContenido);
-
     }
 
     public Boolean visteCompletoEsto(Contenido unContenido) {
         return unContenido.vistoCompleto(this);
     }
-
 
     public Integer cuantasUnidadesDeContenidoViste() {
         return this.contenidosVistosPorUsuario.size();
@@ -59,5 +58,19 @@ public class Usuario {
 
     public Boolean esFanDe(Actor actor) {
         return contenidosVistosPorUsuario.stream().allMatch(c-> c.actuo(actor));
+    }
+
+    public List<Contenido> contenidosIncompletos(){
+        return this.contenidosVistosPorUsuario.stream()
+                .filter(contenido -> !contenido.vistoCompleto(this))
+                .collect(Collectors.toList());
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        id = id;
     }
 }

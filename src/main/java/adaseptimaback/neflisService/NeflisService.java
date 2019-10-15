@@ -2,6 +2,7 @@ package adaseptimaback.neflisService;
 
 import adaseptimaback.Netflis2model.Contenido;
 import adaseptimaback.Netflis2model.UnidadDeContenido;
+import adaseptimaback.Netflis2model.Usuario;
 import adaseptimaback.neflisPersistence.NeflisStorage;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +16,11 @@ import java.util.stream.Collectors;
         private List<UnidadDeContenido> contenidos;
         private NeflisStorage neflisStorage;
         private Integer id;
+        private List<Usuario> usuarios;
+
         public NeflisService(NeflisStorage neflisStorage){
             this.neflisStorage= neflisStorage;
         }
-
 
         public List<UnidadDeContenido> contenidos(String titulo) {
             contenidos=neflisStorage.contenidos();
@@ -28,13 +30,19 @@ import java.util.stream.Collectors;
                 return contenidos.stream().filter(contenido ->contenido.getTitulo().equals(titulo))
                         .collect(Collectors.toList());
             }
-
         }
 
         public List<UnidadDeContenido> getContenidos() {
             return contenidos;
         }
 
+        public List<Contenido> contenidosDestacados(Usuario user, Integer id){
+            return
+                    this.usuarios.stream().
+                            filter(u -> u.getId().equals(id)).findFirst().get()
+                    .contenidosIncompletos();
+            this.neflisStorage.contenidosDestacados();
+        }
 
    /**     public Contenido agregarContenido (Mascota newMascota){
             newMascota.setId(this.id);
@@ -51,7 +59,6 @@ import java.util.stream.Collectors;
             if (reqMascota.getEdad()!=null)mascotaAModificar.setEdad(reqMascota.getEdad());
             if (reqMascota.getTipo()!=null) mascotaAModificar.setTipo(reqMascota.getTipo());
             return mascotaAModificar;
-
         }
     }*/
 

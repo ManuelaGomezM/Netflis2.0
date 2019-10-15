@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Capitulo extends UnidadDeContenido {
+public class Capitulo extends UnidadDeContenido  {
     private Integer numeroDeCapitulo;
     private List<Actor> actoresInvitados = new ArrayList<>();
     private Integer duracionDeCapitulo;

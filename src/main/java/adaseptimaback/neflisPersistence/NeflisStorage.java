@@ -33,7 +33,19 @@ import java.util.List;
             }
         }
 
+        public List<Contenido> contenidosDestacados(){
+            try {
+                return objectMapper.readValue(
+                        new File("contenidosDestacados"),
+                        new TypeReference<List<UnidadDeContenido>>() {
+                        }
+                );
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("No se pudo leer el archivo",e);
 
+            }
+        }
 
      /**   public void nuevoContenido (List <Contenido> contenidosActualizados){
             try {
