@@ -12,9 +12,6 @@ public class Capitulo extends UnidadDeContenido {
     private Serie serie;
 
 
-    public String generoDeSerie(){
-        return this.getSerie().getGenero();
-    }
 
 
     public Capitulo(Integer numeroDeCapitulo, Integer duracionDeCapitulo, Temporada temporada, Serie serie){

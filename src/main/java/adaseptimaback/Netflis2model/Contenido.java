@@ -9,4 +9,7 @@ public interface Contenido {
 
     Boolean actuo(Actor actor);
 
+    String getTitulo();
+
+    String getId ();
 }

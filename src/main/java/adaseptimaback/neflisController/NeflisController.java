@@ -1,4 +1,5 @@
 package adaseptimaback.neflisController;
+import adaseptimaback.Netflis2model.Contenido;
 import adaseptimaback.Netflis2model.UnidadDeContenido;
 import adaseptimaback.neflisService.NeflisService;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +17,7 @@ import java.util.List;
         }
 
         @GetMapping("/contents")
-        public List<UnidadDeContenido> contenidos(@RequestParam(value = "titulo", required = false) String titulo) {
+        public List<Contenido> contenidos(@RequestParam(value = "titulo", required = false) String titulo) {
             return neflisService.contenidos(titulo);
         }
 

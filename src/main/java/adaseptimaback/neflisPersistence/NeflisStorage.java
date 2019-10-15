@@ -19,7 +19,7 @@ import java.util.List;
             this.objectMapper = objectMapper;
         }
 
-        public List<UnidadDeContenido> contenidos() {
+        public List<Contenido> contenidos() {
             try {
                 return objectMapper.readValue(
                         new File("verRUTA"),

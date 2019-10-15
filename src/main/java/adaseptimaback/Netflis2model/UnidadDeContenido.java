@@ -2,11 +2,13 @@ package adaseptimaback.Netflis2model;
 
 public class UnidadDeContenido implements Contenido {
     protected String genero;
-
+    protected String Titulo;
+    protected String Id ;
 
     public UnidadDeContenido(){
 
     }
+
 
 
     public boolean vistoCompleto(Usuario unUsuario) {
@@ -37,4 +39,20 @@ public class UnidadDeContenido implements Contenido {
     }
 
 
+    @Override
+    public String getTitulo() {
+        return Titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        Titulo = titulo;
+    }
+
+    public String getId() {
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
+    }
 }

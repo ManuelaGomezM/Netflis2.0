@@ -1,7 +1,6 @@
 package adaseptimaback.neflisService;
 
 import adaseptimaback.Netflis2model.Contenido;
-import adaseptimaback.Netflis2model.UnidadDeContenido;
 import adaseptimaback.neflisPersistence.NeflisStorage;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +11,7 @@ import java.util.stream.Collectors;
     @Service
 
     public class NeflisService {
-        private List<UnidadDeContenido> contenidos;
+        private List<Contenido> contenidos;
         private NeflisStorage neflisStorage;
         private Integer id;
         public NeflisService(NeflisStorage neflisStorage){
@@ -20,7 +19,7 @@ import java.util.stream.Collectors;
         }
 
 
-        public List<UnidadDeContenido> contenidos(String titulo) {
+        public List<Contenido> contenidos(String titulo) {
             contenidos=neflisStorage.contenidos();
             if (titulo == null)
                 return contenidos;
@@ -31,7 +30,7 @@ import java.util.stream.Collectors;
 
         }
 
-        public List<UnidadDeContenido> getContenidos() {
+        public List<Contenido> getContenidos() {
             return contenidos;
         }
 
