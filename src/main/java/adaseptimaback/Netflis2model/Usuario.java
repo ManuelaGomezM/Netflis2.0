@@ -10,7 +10,7 @@ public class Usuario implements Serializable {
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
 
     public void yaLoViste(Contenido unContenido) {
-        this.contenidosVistosPorUsuario.add(unContenido);
+        this.getContenidosVistosPorUsuario().add(unContenido);
     }
 
     public Boolean visteCompletoEsto(Contenido unContenido) {
@@ -18,11 +18,11 @@ public class Usuario implements Serializable {
     }
 
     public Integer cuantasUnidadesDeContenidoViste() {
-        return this.contenidosVistosPorUsuario.size();
+        return this.getContenidosVistosPorUsuario().size();
     }
 
     public Boolean contenidoFueVisto(Contenido unContenido) {
-        return this.contenidosVistosPorUsuario.contains(unContenido);
+        return this.getContenidosVistosPorUsuario().contains(unContenido);
     }
 
     //se pide una coleccion sin repetir de strings que son los generos
@@ -30,14 +30,14 @@ public class Usuario implements Serializable {
 
 
     public List<String> generosVistosPorUsuario() {
-        return contenidosVistosPorUsuario.stream()
+        return getContenidosVistosPorUsuario().stream()
                 .map(contenido -> contenido.getGenero())
                 .distinct()
                 .collect(Collectors.toList());
     }
 
     public List <Contenido> contenidosPorGenero(String ungenero) {
-        return contenidosVistosPorUsuario.stream()
+        return getContenidosVistosPorUsuario().stream()
                 .filter(c -> c.getGenero().equals(ungenero))
                 .collect(Collectors.toList());
 
@@ -57,11 +57,11 @@ public class Usuario implements Serializable {
     }
 
     public Boolean esFanDe(Actor actor) {
-        return contenidosVistosPorUsuario.stream().allMatch(c-> c.actuo(actor));
+        return getContenidosVistosPorUsuario().stream().allMatch(c-> c.actuo(actor));
     }
 
     public List<Contenido> contenidosIncompletos(){
-        return this.contenidosVistosPorUsuario.stream()
+        return this.getContenidosVistosPorUsuario().stream()
                 .filter(contenido -> !contenido.vistoCompleto(this))
                 .collect(Collectors.toList());
     }
@@ -72,5 +72,13 @@ public class Usuario implements Serializable {
 
     public void setId(Integer id) {
         id = id;
+    }
+
+    public List<Contenido> getContenidosVistosPorUsuario() {
+        return contenidosVistosPorUsuario;
+    }
+
+    public void setContenidosVistosPorUsuario(List<Contenido> contenidosVistosPorUsuario) {
+        this.contenidosVistosPorUsuario = contenidosVistosPorUsuario;
     }
 }

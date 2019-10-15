@@ -22,9 +22,14 @@ import java.util.List;
             return neflisService.contenidos(titulo);
         }
 
-        @GetMapping("/user/{id}featuredcontents")
+        @GetMapping("/users/{id}/featured")
         public List<Contenido> contenidosDestacados(Usuario user,@PathVariable (value="id") Integer id ){
             return this.neflisService.contenidosDestacados(user, id);
+        }
+
+        @GetMapping ("/users/{id}/watched")
+        public  List<Contenido> contenidosVistos(Usuario user,@PathVariable (value="id") Integer id ){
+            return this.neflisService.contenidosVistos(user, id);
         }
 
       /**  @PostMapping("/mascotas")
