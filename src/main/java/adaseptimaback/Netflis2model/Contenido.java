@@ -1,6 +1,7 @@
 package adaseptimaback.Netflis2model;
 
 public interface Contenido {
+
     boolean vistoCompleto(Usuario unUsuario);
 
     String getGenero();

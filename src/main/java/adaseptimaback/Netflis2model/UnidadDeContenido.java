@@ -8,13 +8,10 @@ public class UnidadDeContenido implements Contenido {
     public UnidadDeContenido(){
 
     }
-
-
-
     public boolean vistoCompleto(Usuario unUsuario) {
         return unUsuario.contenidoFueVisto(this);
-
     }
+
     private Integer duracion;
 
     public String getGenero() {

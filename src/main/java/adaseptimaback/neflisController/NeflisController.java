@@ -17,8 +17,8 @@ import java.util.List;
         }
 
         @GetMapping("/contents")
-        public List<Contenido> contenidos(@RequestParam(value = "titulo", required = false) String titulo) {
-            return neflisService.contenidos(titulo);
+         public List<Contenido> contenidos(@RequestParam(value = "titulo", required = false) String titulo) {
+         return neflisService.contenidos(titulo);
         }
 
       /**  @PostMapping("/mascotas")
