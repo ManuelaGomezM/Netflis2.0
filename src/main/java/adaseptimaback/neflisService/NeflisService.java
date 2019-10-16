@@ -41,7 +41,7 @@ import java.util.stream.Collectors;
                     this.usuarios.stream().
                             filter(u -> u.getId().equals(id)).findFirst().get()
                     .contenidosIncompletos();
-            this.neflisStorage.contenidosDestacados();
+          //  this.neflisStorage.contenidosDestacados();
         }
 
    /**     public Contenido agregarContenido (Mascota newMascota){
