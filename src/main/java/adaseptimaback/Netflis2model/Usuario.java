@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 public class Usuario {
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
 
+    public Usuario(){}
 
     public void yaLoViste(Contenido unContenido) {
         this.contenidosVistosPorUsuario.add(unContenido);
@@ -46,7 +47,7 @@ public class Usuario {
 
     public Integer minutosVistosporGenero(String unGenero) {
         return this.contenidosPorGenero(unGenero).stream()
-                .mapToInt(contenido -> contenido.cuantoDura())
+                .mapToInt(contenido -> contenido.getDuracion())
                 .sum();
     }
 

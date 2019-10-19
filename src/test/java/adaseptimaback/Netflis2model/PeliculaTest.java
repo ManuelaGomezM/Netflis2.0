@@ -1,11 +1,6 @@
 package adaseptimaback.Netflis2model;
-import adaseptimaback.Netflis2model.Actor;
-import adaseptimaback.Netflis2model.Pelicula;
-import adaseptimaback.Netflis2model.Usuario;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -51,8 +46,8 @@ public class PeliculaTest {
 
     @Test
     void cuantoDuraTest() {
-        Titanic.setDuracionDePelicula(160);
-        assertEquals(160, Titanic.cuantoDura().intValue());
+        Titanic.setDuracion(160);
+        assertEquals(160, Titanic.getDuracion().intValue());
     }
 
     /**

@@ -1,19 +1,19 @@
 package adaseptimaback.Netflis2model;
 
+import java.util.List;
+
 public class UnidadDeContenido implements Contenido {
     public String genero;
     private String titulo;
+    private Long id;
+    private Integer duracion;
 
-    public UnidadDeContenido(){
-
-    }
-
+    public UnidadDeContenido(){    }
 
     public boolean vistoCompleto(Usuario unUsuario) {
         return unUsuario.contenidoFueVisto(this);
 
     }
-    private Integer duracion;
 
     public String getGenero() {
         return genero;
@@ -23,7 +23,7 @@ public class UnidadDeContenido implements Contenido {
         this.genero = genero;
     }
 
-    public Integer cuantoDura() {
+    public Integer getDuracion() {
         return duracion;
     }
 
@@ -42,5 +42,13 @@ public class UnidadDeContenido implements Contenido {
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

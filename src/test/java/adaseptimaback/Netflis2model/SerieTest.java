@@ -68,7 +68,7 @@ public class SerieTest {
         assertTrue(Sherlock.vistoCompleto(Anita));
     }
 
-    /**cuantoDura**/
+    /**getDuracion**/
 
     @Test
 
@@ -78,7 +78,7 @@ public class SerieTest {
         Lost.agregarTemporada(temporada1);
         when(temporada1.cuantosMinutosDuraLatemporadaCompleta().intValue()).thenReturn(45);
         when(temporada2.cuantosMinutosDuraLatemporadaCompleta().intValue()).thenReturn(50);
-        assertEquals(95,Lost.cuantoDura().intValue());
+        assertEquals(95,Lost.getDuracion().intValue());
 
     }
 
