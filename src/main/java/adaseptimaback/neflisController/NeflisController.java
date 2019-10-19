@@ -4,7 +4,6 @@ import adaseptimaback.Netflis2model.Response;
 import adaseptimaback.Netflis2model.UnidadDeContenido;
 import adaseptimaback.neflisService.NeflisService;
 import org.springframework.web.bind.annotation.*;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
