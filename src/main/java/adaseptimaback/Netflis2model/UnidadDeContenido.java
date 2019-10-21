@@ -1,19 +1,18 @@
 package adaseptimaback.Netflis2model;
 
-public class UnidadDeContenido implements Contenido {
+public abstract class UnidadDeContenido implements Contenido {
     public String genero;
     private String titulo;
+    private Integer duracion;
 
     public UnidadDeContenido(){
 
     }
 
-
     public boolean vistoCompleto(Usuario unUsuario) {
         return unUsuario.contenidoFueVisto(this);
 
     }
-    private Integer duracion;
 
     public String getGenero() {
         return genero;
