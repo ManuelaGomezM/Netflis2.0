@@ -75,8 +75,8 @@ public class TemporadaTest {
 
         temporada1.agregarCapitulo(capitulo1);
         temporada1.agregarCapitulo(capitulo2);
-        when(capitulo1.cuantoDura()).thenReturn(30);
-        when(capitulo2.cuantoDura()).thenReturn(50);
+        when(capitulo1.getDuracion()).thenReturn(30);
+        when(capitulo2.getDuracion()).thenReturn(50);
         assertEquals(80,temporada1.cuantosMinutosDuraLatemporadaCompleta().intValue());
 
 

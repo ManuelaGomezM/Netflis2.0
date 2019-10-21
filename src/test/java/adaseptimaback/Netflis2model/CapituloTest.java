@@ -1,8 +1,4 @@
 package adaseptimaback.Netflis2model;
-import adaseptimaback.Netflis2model.Actor;
-import adaseptimaback.Netflis2model.Capitulo;
-import adaseptimaback.Netflis2model.Serie;
-import adaseptimaback.Netflis2model.Temporada;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -48,14 +44,14 @@ public class CapituloTest {
     }
 
     /**
-     * cuantoDura
+     * getDuracion
      **/
 
     @Test
     void cuantoDuraTest() {
 
         capitulo1.setDuracionDeCapitulo(45);
-        assertEquals(45, capitulo1.cuantoDura().intValue());
+        assertEquals(45, capitulo1.getDuracion().intValue());
     }
 
     /**generodeCapitulo**/

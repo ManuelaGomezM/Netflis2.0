@@ -1,28 +1,30 @@
 package adaseptimaback.Netflis2model;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Usuario implements Serializable {
-    private Integer id;
+public class Usuario {
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
 
+    public Usuario(){}
+
     public void yaLoViste(Contenido unContenido) {
-        this.getContenidosVistosPorUsuario().add(unContenido);
+        this.contenidosVistosPorUsuario.add(unContenido);
+
     }
 
     public Boolean visteCompletoEsto(Contenido unContenido) {
         return unContenido.vistoCompleto(this);
     }
 
+
     public Integer cuantasUnidadesDeContenidoViste() {
-        return this.getContenidosVistosPorUsuario().size();
+        return this.contenidosVistosPorUsuario.size();
     }
 
     public Boolean contenidoFueVisto(Contenido unContenido) {
-        return this.getContenidosVistosPorUsuario().contains(unContenido);
+        return this.contenidosVistosPorUsuario.contains(unContenido);
     }
 
     //se pide una coleccion sin repetir de strings que son los generos
@@ -30,14 +32,14 @@ public class Usuario implements Serializable {
 
 
     public List<String> generosVistosPorUsuario() {
-        return getContenidosVistosPorUsuario().stream()
+        return contenidosVistosPorUsuario.stream()
                 .map(contenido -> contenido.getGenero())
                 .distinct()
                 .collect(Collectors.toList());
     }
 
     public List <Contenido> contenidosPorGenero(String ungenero) {
-        return getContenidosVistosPorUsuario().stream()
+        return contenidosVistosPorUsuario.stream()
                 .filter(c -> c.getGenero().equals(ungenero))
                 .collect(Collectors.toList());
 
@@ -45,7 +47,7 @@ public class Usuario implements Serializable {
 
     public Integer minutosVistosporGenero(String unGenero) {
         return this.contenidosPorGenero(unGenero).stream()
-                .mapToInt(contenido -> contenido.cuantoDura())
+                .mapToInt(contenido -> contenido.getDuracion())
                 .sum();
     }
 
@@ -57,28 +59,6 @@ public class Usuario implements Serializable {
     }
 
     public Boolean esFanDe(Actor actor) {
-        return getContenidosVistosPorUsuario().stream().allMatch(c-> c.actuo(actor));
-    }
-
-    public List<Contenido> contenidosIncompletos(){
-        return this.getContenidosVistosPorUsuario().stream()
-                .filter(contenido -> !contenido.vistoCompleto(this))
-                .collect(Collectors.toList());
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        id = id;
-    }
-
-    public List<Contenido> getContenidosVistosPorUsuario() {
-        return contenidosVistosPorUsuario;
-    }
-
-    public void setContenidosVistosPorUsuario(List<Contenido> contenidosVistosPorUsuario) {
-        this.contenidosVistosPorUsuario = contenidosVistosPorUsuario;
+        return contenidosVistosPorUsuario.stream().allMatch(c-> c.actuo(actor));
     }
 }

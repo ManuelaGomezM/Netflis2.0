@@ -1,11 +1,8 @@
 package adaseptimaback.neflisService;
-
 import adaseptimaback.Netflis2model.Contenido;
-import adaseptimaback.Netflis2model.UnidadDeContenido;
-import adaseptimaback.Netflis2model.Usuario;
+import adaseptimaback.Netflis2model.Response;
 import adaseptimaback.neflisPersistence.NeflisStorage;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,36 +10,36 @@ import java.util.stream.Collectors;
     @Service
 
     public class NeflisService {
-        private List<UnidadDeContenido> contenidos;
+        private List<Response> contenidos;
         private NeflisStorage neflisStorage;
         private Integer id;
-        private List<Usuario> usuarios;
-
         public NeflisService(NeflisStorage neflisStorage){
             this.neflisStorage= neflisStorage;
         }
 
-        public List<UnidadDeContenido> contenidos(String titulo) {
-            contenidos=neflisStorage.contenidos();
-            if (titulo == null)
-                return contenidos;
-            else {
-                return contenidos.stream().filter(contenido ->contenido.getTitulo().equals(titulo))
-                        .collect(Collectors.toList());
-            }
-        }
 
-        public List<UnidadDeContenido> getContenidos() {
+        public List<Response> contenidos(String titulo) {
+            contenidos = neflisStorage.contenidos();
+            try {
+                if (titulo == null) {
+                    return contenidos;
+                } else {
+                    return contenidos.stream().filter(response -> response.getTitle().equals(titulo))
+                            .collect(Collectors.toList());
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }return null;
+
+
+      }
+    }
+
+        /*esta en rojo y no se por que
+            public List<UnidadDeContenido> getContenidos() {
             return contenidos;
-        }
+        }*/
 
-        public List<Contenido> contenidosDestacados(Usuario user, Integer id){
-            return
-                    this.usuarios.stream().
-                            filter(u -> u.getId().equals(id)).findFirst().get()
-                    .contenidosIncompletos();
-          //  this.neflisStorage.contenidosDestacados();
-        }
 
    /**     public Contenido agregarContenido (Mascota newMascota){
             newMascota.setId(this.id);
@@ -59,7 +56,7 @@ import java.util.stream.Collectors;
             if (reqMascota.getEdad()!=null)mascotaAModificar.setEdad(reqMascota.getEdad());
             if (reqMascota.getTipo()!=null) mascotaAModificar.setTipo(reqMascota.getTipo());
             return mascotaAModificar;
+
         }
     }*/
 
-}
