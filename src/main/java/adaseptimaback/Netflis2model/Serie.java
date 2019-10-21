@@ -11,7 +11,6 @@ public class Serie implements Contenido {
     public String genero;
 
 
-
     public Serie(String nombreDeSerie, String genero){
         this.nombreDeSerie=nombreDeSerie;
         this.genero=genero;
@@ -51,8 +50,6 @@ public class Serie implements Contenido {
     public Integer cuantoDura(){
         return duracionDeTodaLaSerieEnMinutos();
     }
-
-
 
     public String getGenero() {
         return genero;

@@ -38,18 +38,10 @@ import java.util.stream.Collectors;
 
         public List<Contenido> contenidosDestacados(Usuario user, Integer id){
             return
-                    this.getUsuarioPorId()
+                    this.usuarios.stream().
+                            filter(u -> u.getId().equals(id)).findFirst().get()
                     .contenidosIncompletos();
-            //return this.neflisStorage.contenidosDestacados();
-        }
-
-        public List<Contenido> contenidosVistos(Usuario user, Integer id){
-            return this.getUsuarioPorId().getContenidosVistosPorUsuario();
-        }
-
-        public Usuario getUsuarioPorId(){
-            return this.usuarios.stream().
-                    filter(u -> u.getId().equals(id)).findFirst().get();
+          //  this.neflisStorage.contenidosDestacados();
         }
 
    /**     public Contenido agregarContenido (Mascota newMascota){
