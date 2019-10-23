@@ -1,8 +1,6 @@
 package adaseptimaback.Netflis2model;
 
-import java.util.List;
-
-public class UnidadDeContenido implements Contenido {
+public abstract class UnidadDeContenido implements Contenido {
     public String genero;
     private String titulo;
     private Long id;
