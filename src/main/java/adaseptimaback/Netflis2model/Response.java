@@ -17,6 +17,7 @@ public class Response {
     private List<Capitulo> episodes = null;
     private Integer totalSeasons=null;
     private OmdbNeflisClase omdbNeflisClase;
+    private Contenido contenido;
 
     public Response() {
     }
@@ -29,16 +30,24 @@ public class Response {
         this.genre = c.getGenero();
     }
 
-    public Response conviertoOmdbAResponse(OmdbNeflisClase omdbNeflisClase){
-        Response newResponse=new Response();
-        newResponse.title=omdbNeflisClase.getTitle();
-        newResponse.actors=omdbNeflisClase.getActors();
-        newResponse.year=omdbNeflisClase.getYear();
-        newResponse.director=omdbNeflisClase.getDirector();
-//        newResponse.duration=omdbNeflisClase.getRuntime().split(“\\s”)[0];
-        newResponse.plot=omdbNeflisClase.getPlot();
-        newResponse.totalSeasons=omdbNeflisClase.getTotalSeasons();
-        return newResponse;
+    public void contenidoAResponse(Contenido c) {
+        this.id = c.getId();
+        this.title = c.getTitulo();
+        this.duration = c.getDuracion();
+        this.actors = c.nombresDeActores();
+        this.genre = c.getGenero();
+    }
+
+    //public void responseAContenido(){ }
+
+    public void conviertoOmdbAResponse(OmdbNeflisClase omdbNeflisClase){
+        this.title=omdbNeflisClase.getTitle();
+        this.actors=omdbNeflisClase.getActors();
+        this.year=omdbNeflisClase.getYear();
+        this.director=omdbNeflisClase.getDirector();
+//       this.duration=omdbNeflisClase.getRuntime().split(“\\s”)[0];
+        this.plot=omdbNeflisClase.getPlot();
+        this.totalSeasons=omdbNeflisClase.getTotalSeasons();
     }
 
     public Long getId() {

@@ -61,4 +61,10 @@ public class Usuario {
     public Boolean esFanDe(Actor actor) {
         return contenidosVistosPorUsuario.stream().allMatch(c-> c.actuo(actor));
     }
+
+    public List<Contenido> contenidosDestacados(){//Contenidos destacados son los que el usuario no completo y unos predeterminados
+        return this.contenidosVistosPorUsuario.stream()
+                .filter(contenido -> !contenido.vistoCompleto(this))
+                .collect(Collectors.toList());
+    }
 }

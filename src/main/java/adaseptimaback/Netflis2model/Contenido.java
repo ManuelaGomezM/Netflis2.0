@@ -17,4 +17,6 @@ public interface Contenido extends Serializable {
     Boolean actuo(Actor actor);
 
     List<String> nombresDeActores();
+
+
 }
