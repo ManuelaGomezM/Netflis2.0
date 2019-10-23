@@ -3,10 +3,12 @@ package adaseptimaback.Netflis2model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Temporada {
+public class Temporada  {
     private Serie serie;
     private Integer numeroDeTemporada;
-    public List<Capitulo> capitulos2 = new ArrayList<>();
+    private List<Capitulo> capitulos2 = new ArrayList<>();
+    private Long id;
+
 
 
     public Integer cantidadDeCapitulosEnTemporada() {
@@ -32,11 +34,19 @@ public class Temporada {
 
     public Integer cuantosMinutosDuraLatemporadaCompleta() {
         return capitulos2.stream()
-                .mapToInt(capitulo -> capitulo.cuantoDura())
+                .mapToInt(capitulo -> capitulo.getDuracion())
                 .sum();
     }
 
     public Capitulo ultimoCapituloDisponible() {
         return capitulos2.get(capitulos2.size()-1);
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

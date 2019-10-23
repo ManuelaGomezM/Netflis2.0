@@ -2,28 +2,28 @@ package adaseptimaback.Netflis2model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Pelicula extends UnidadDeContenido {
-    private String nombreDePelicula;
-    private Integer duracionDePelicula;
     private List<Actor> actoresDePeliculas = new ArrayList<>();
 
-    public Pelicula(String genero,String nombreDePelicula,Integer duracionDePelicula){
+
+    public Pelicula(){}
+
+    public Pelicula(String titulo,String genero,Integer duracionDePelicula){
         super.setGenero(genero);
-        this.nombreDePelicula=nombreDePelicula;
-        this.duracionDePelicula=duracionDePelicula;
+        this.setTitulo(titulo);
+        super.setDuracion(duracionDePelicula);
     }
     public void setActoresDePeliculas(Actor unActortrizDePelicula) {
         this.actoresDePeliculas.add(unActortrizDePelicula);
 
     }
 
-    public Integer cuantoDura() {
-        return getDuracionDePelicula();
-    }
-
-    public void setDuracionDePelicula(Integer duracionDePelicula) {
-        this.duracionDePelicula = duracionDePelicula;
+    public List<String> nombresDeActores(){
+        return this.actoresDePeliculas.stream()
+                .map(actor -> actor.getName())
+                .collect(Collectors.toList());
     }
 
 
@@ -32,25 +32,10 @@ public class Pelicula extends UnidadDeContenido {
     // ese metodo se hizo en el usuario pero esta mal. aplicaria misma solucion a capitulo
 
 
-    public boolean vistoCompleto(Usuario unUsuario) {
-
-        return unUsuario.contenidoFueVisto(this);
-    }
-
     public Boolean actuo(Actor actor){
 
         return actoresDePeliculas.contains(actor);
     }
 
-    public String getNombreDePelicula() {
-        return nombreDePelicula;
-    }
 
-    public void setNombreDePelicula(String nombreDePelicula) {
-        this.nombreDePelicula = nombreDePelicula;
-    }
-
-    public Integer getDuracionDePelicula() {
-        return duracionDePelicula;
-    }
 }

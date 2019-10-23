@@ -2,18 +2,22 @@ package adaseptimaback.Netflis2model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Serie implements Contenido {
 
     private String nombreDeSerie;
     private List<Actor> actoresFijosDeLaSerie = new ArrayList<>();
     private List<Temporada> temporadas = new ArrayList<>();
-    public String genero;
+    private String genero;
+    private Long id;
 
+
+    public Serie(){}
 
 
     public Serie(String nombreDeSerie, String genero){
-        this.nombreDeSerie=nombreDeSerie;
+        this.setNombreDeSerie(nombreDeSerie);
         this.genero=genero;
     }
 
@@ -37,6 +41,13 @@ public class Serie implements Contenido {
         return this.temporadas.size();
     }
 
+    public Temporada ultimaTemporadadisponible() {
+        return temporadas.get(temporadas.size()-1);
+    }
+
+    public Capitulo ultimoCapituloDeLaSerie(){
+        return this.ultimaTemporadadisponible().ultimoCapituloDisponible();
+    }
     public boolean vistoCompleto(Usuario unUsuario) {
         return this.temporadas.stream()
                 .allMatch(temporada -> temporada.vistoCompleto(unUsuario));
@@ -48,11 +59,9 @@ public class Serie implements Contenido {
                 .sum();
     }
 
-    public Integer cuantoDura(){
+    public Integer getDuracion(){
         return duracionDeTodaLaSerieEnMinutos();
     }
-
-
 
     public String getGenero() {
         return genero;
@@ -60,6 +69,28 @@ public class Serie implements Contenido {
 
     public void setGenero(String genero) {
         this.genero = genero;
+    }
+
+    public String getTitulo() {
+        return nombreDeSerie;
+    }
+
+    public void setNombreDeSerie(String nombreDeSerie) {
+        this.nombreDeSerie = nombreDeSerie;
+    }
+
+    public List<String> nombresDeActores(){
+        return this.actoresFijosDeLaSerie.stream()
+                .map(actor -> actor.getName())
+                .collect(Collectors.toList());
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
 

@@ -1,16 +1,20 @@
 package adaseptimaback.Netflis2model;
 
-public interface Contenido {
 
+import java.io.Serializable;
+import java.util.List;
+
+public interface Contenido extends Serializable {
+    Long getId();
     boolean vistoCompleto(Usuario unUsuario);
-
-    String getGenero();
-
-    Integer cuantoDura();
-
-    Boolean actuo(Actor actor);
 
     String getTitulo();
 
-    String getId ();
+    String getGenero();
+
+    Integer getDuracion();
+
+    Boolean actuo(Actor actor);
+
+    List<String> nombresDeActores();
 }

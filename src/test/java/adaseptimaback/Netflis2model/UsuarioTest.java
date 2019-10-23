@@ -102,8 +102,8 @@ public class UsuarioTest {
 
     void minutosVistosPorGeneroTest (){
 
-        when(Sherlock.cuantoDura()).thenReturn(50);
-        when(CodigoEnigma.cuantoDura()).thenReturn(20);
+        when(Sherlock.getDuracion()).thenReturn(50);
+        when(CodigoEnigma.getDuracion()).thenReturn(20);
         when(Sherlock.getGenero()).thenReturn("policial");
         when(CodigoEnigma.getGenero()).thenReturn("policial");
         Anita.yaLoViste(Sherlock);
@@ -116,8 +116,8 @@ public class UsuarioTest {
     @Test
 
     void generoPreferidoTest (){
-        when(Sherlock.cuantoDura()).thenReturn(50);
-        when(CodigoEnigma.cuantoDura()).thenReturn(20);
+        when(Sherlock.getDuracion()).thenReturn(50);
+        when(CodigoEnigma.getDuracion()).thenReturn(20);
         when(Sherlock.getGenero()).thenReturn("policial");
         when(CodigoEnigma.getGenero()).thenReturn("suspenso");
         Anita.yaLoViste(Sherlock);
