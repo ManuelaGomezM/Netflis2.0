@@ -2,9 +2,10 @@ package adaseptimaback.Netflis2model;
 
 import adaseptimaback.neflisService.OmdbNeflisClase;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Response {
+public class Response implements Serializable {
     private Long id;
     private String title = null;
     private String year = null;
@@ -16,6 +17,9 @@ public class Response {
     private List<Temporada> seasons = null;
      private List<Capitulo> episodes = null;
     private OmdbNeflisClase omdbNeflisClase;
+    private Integer totalSeasons=null;
+
+
 
     public Response() {
     }
@@ -26,6 +30,16 @@ public class Response {
         this.duration = c.getDuracion();
         this.actors = c.nombresDeActores();
         this.genre = c.getGenero();
+    }
+
+ public void conviertoOmdbAResponse(OmdbNeflisClase omdbNeflisClase){
+        this.title=omdbNeflisClase.getTitle();
+        this.actors=omdbNeflisClase.getActors();
+        this.year=omdbNeflisClase.getYear();
+        this.director=omdbNeflisClase.getDirector();
+//       this.duration=omdbNeflisClase.getRuntime().split(“\\s”)[0];
+        this.plot=omdbNeflisClase.getPlot();
+        this.totalSeasons=omdbNeflisClase.getTotalSeasons();
     }
 
     public Long getId() {
