@@ -1,8 +1,8 @@
 
 { "id": 243567734,
   "title": "Titanic",
-  "year": 1997,
-  "duration": "194 min",
+  "year": "1997",
+  "duration": 194 ,
   "genre": "Drama",
   "director": "James Cameron",
   "actors": ["Leonardo DiCaprio",

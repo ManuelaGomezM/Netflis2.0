@@ -1,0 +1,47 @@
+{
+  "id": 23568993,
+  "title": "Game of Thrones",
+  "year": "2011-2019",
+  "duration": " ",
+  "genre": "Action",
+  "director": "N/A",
+  "actors": [
+    "Peter Dinklage",
+    "Emilia Clarke",
+    "Lena Headey",
+    "KitHarington"
+  ],
+  "plot": "Nine noble families fight for control over the mythical lands of Westeros, while an ancient enemy returns after being dormant for thousands of years",
+  "seasons": [
+    {
+      "id": 23456,
+      "number": 1,
+      "duration": "570 min",
+      "episodes": [
+        {
+          "id": 1234,
+          "number": 1,
+          "duration": 57 ,
+          "guest_actors": [
+            "Roberto Patinson",
+            "El enano"
+          ]
+        },
+        {
+          "id": 1235,
+          "number": 2,
+          "duration": "59 min",
+          "guest_actors": [
+            "Micky Vainilla",
+            "Violencia Rivas"
+          ]
+        }
+      ]
+    }
+  ],
+  "number_of_episodes": 10,
+
+     "number_of_seasons": 8}
+
+
+

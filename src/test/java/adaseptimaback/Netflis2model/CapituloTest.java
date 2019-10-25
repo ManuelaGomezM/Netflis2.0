@@ -50,7 +50,7 @@ public class CapituloTest {
     @Test
     void cuantoDuraTest() {
 
-        capitulo1.setDuracionDeCapitulo(45);
+        capitulo1.setDuracion(45);
         assertEquals(45, capitulo1.getDuracion().intValue());
     }
 

@@ -1,16 +1,9 @@
 package adaseptimaback.neflisController;
-import adaseptimaback.Netflis2model.Contenido;
 import adaseptimaback.Netflis2model.Response;
-import adaseptimaback.Netflis2model.UnidadDeContenido;
 import adaseptimaback.neflisService.NeflisService;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
+
 import java.util.List;
 
     @RestController
@@ -25,8 +18,7 @@ import java.util.List;
 
         @GetMapping("/contents")
         public List<Response> contenidos(@RequestParam(value = "titulo", required = false) String titulo) {
-            if (neflisService.contenidos(titulo).equals(false));{
-
+          //  if (neflisService.contenidos(titulo).equals(false));{
                 return neflisService.contenidos(titulo);
         }
 
@@ -41,4 +33,4 @@ import java.util.List;
             return this.mascotaService.updateMascota(mascota,id);
 
         }}*/
-        }}
+        }

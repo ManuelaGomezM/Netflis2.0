@@ -37,7 +37,7 @@ public class Response implements Serializable {
         this.actors=omdbNeflisClase.getActors();
         this.year=omdbNeflisClase.getYear();
         this.director=omdbNeflisClase.getDirector();
-//       this.duration=omdbNeflisClase.getRuntime().split(“\\s”)[0];
+        this.duration= Integer.valueOf(omdbNeflisClase.getRuntime().split("\\s")[0]);
         this.plot=omdbNeflisClase.getPlot();
         this.totalSeasons=omdbNeflisClase.getTotalSeasons();
     }

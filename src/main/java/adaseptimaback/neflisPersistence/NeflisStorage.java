@@ -1,7 +1,5 @@
 package adaseptimaback.neflisPersistence;
-import adaseptimaback.Netflis2model.Contenido;
 import adaseptimaback.Netflis2model.Response;
-import adaseptimaback.Netflis2model.UnidadDeContenido;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
@@ -21,8 +19,8 @@ import java.util.List;
         public List<Response> contenidos() {
             try {
                 return objectMapper.readValue(
-                        new File("C:\\Users\\Vicky\\Netflis2.0\\src\\main\\resources\\contenidos.json"),
-                        new TypeReference<List<Contenido>>() {
+                        new File("src\\main\\resources\\peliculas.json"),
+                        new TypeReference<List<Response>>() {
                         }
                 );
 
