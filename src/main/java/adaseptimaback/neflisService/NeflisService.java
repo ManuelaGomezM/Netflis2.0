@@ -2,6 +2,7 @@ package adaseptimaback.neflisService;
 import adaseptimaback.Netflis2model.Contenido;
 import adaseptimaback.Netflis2model.Response;
 import adaseptimaback.neflisPersistence.NeflisStorage;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,11 +12,12 @@ import java.util.stream.Collectors;
 
     public class NeflisService {
         private List<Response> contenidos;
+        @Autowired
         private NeflisStorage neflisStorage;
         private Integer id;
-        public NeflisService(NeflisStorage neflisStorage){
-            this.neflisStorage= neflisStorage;
-        }
+
+
+
 
 
         public List<Response> contenidos(String titulo) {

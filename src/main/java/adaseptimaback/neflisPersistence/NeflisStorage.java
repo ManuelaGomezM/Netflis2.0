@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -16,7 +17,7 @@ import java.util.List;
             this.objectMapper = objectMapper;
         }
 
-        public List<Response> contenidos() {
+        public List<Response> peliculas() {
             try {
                 return objectMapper.readValue(
                         new File("src\\main\\resources\\peliculas.json"),
@@ -30,8 +31,29 @@ import java.util.List;
 
             }
         }
+        public List<Response> series() {
+            try {
+                return objectMapper.readValue(
+                        new File("src\\main\\resources\\serie.json"),
+                        new TypeReference<List<Response>>() {
+                        }
+                );
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("No se pudo leer el archivo",e);
+
+            }
+        }
 
 
+        public List<Response> contenidos(){
+            List<Response> contenidos= new ArrayList<>();
+            contenidos.addAll(this.series());
+            contenidos.addAll(this.peliculas());
+            return contenidos;
+
+        }
 
      /**   public void nuevoContenido (List <Contenido> contenidosActualizados){
             try {
