@@ -16,7 +16,7 @@
     {
       "id": 23456,
       "number": 1,
-      "duration": "570 min",
+      "duration": 570,
       "episodes": [
         {
           "id": 1234,
