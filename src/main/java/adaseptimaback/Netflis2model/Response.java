@@ -12,11 +12,10 @@ public class Response implements Serializable {
     private String director;
     private Integer duration = null;
     private String genre = null;
-    private List<String> actors = null;
+    private String actors = null;
     private String plot = null;
     private List<Temporada> seasons = null;
      private List<Capitulo> episodes = null;
-    private OmdbNeflisClase omdbNeflisClase;
     private Integer totalSeasons=null;
 
 
@@ -28,18 +27,20 @@ public class Response implements Serializable {
         this.id = c.getId();
         this.title = c.getTitulo();
         this.duration = c.getDuracion();
-        this.actors = c.nombresDeActores();
+        //this.actors = c.nombresDeActores();
         this.genre = c.getGenero();
     }
 
- public void conviertoOmdbAResponse(OmdbNeflisClase omdbNeflisClase){
+ public Response conviertoOmdbAResponse(OmdbNeflisClase omdbNeflisClase){
         this.title=omdbNeflisClase.getTitle();
         this.actors=omdbNeflisClase.getActors();
         this.year=omdbNeflisClase.getYear();
         this.director=omdbNeflisClase.getDirector();
-        this.duration= Integer.valueOf(omdbNeflisClase.getRuntime().split("\\s")[0]);
+        //this.duration= Integer.valueOf(omdbNeflisClase.getRuntime().split("\\s")[0]);
         this.plot=omdbNeflisClase.getPlot();
         this.totalSeasons=omdbNeflisClase.getTotalSeasons();
+
+        return this;
     }
 
     public Long getId() {
@@ -90,11 +91,11 @@ public class Response implements Serializable {
         this.genre = genre;
     }
 
-    public List<String> getActors() {
+    public String getActors() {
         return actors;
     }
 
-    public void setActors(List<String> actors) {
+    public void setActors(String actors) {
         this.actors = actors;
     }
 

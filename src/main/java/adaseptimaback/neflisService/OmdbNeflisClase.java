@@ -2,68 +2,85 @@ package adaseptimaback.neflisService;
 
 import adaseptimaback.Netflis2model.Capitulo;
 import adaseptimaback.Netflis2model.Temporada;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.context.annotation.Bean;
 
+import java.io.Serializable;
 import java.util.List;
+@JsonIgnoreProperties (ignoreUnknown = true)
+public class OmdbNeflisClase implements Serializable {
 
-public class OmdbNeflisClase {
-    private String title;
-    private String year;
-    private String director;
-    private String runtime;
-    private String plot;
-    private List<String> actors;
-    private Integer totalSeasons=null;
-    private String type;
+    private String Title;
+    private String Year;
+    private String Director;
+    private String Runtime;
 
-    public OmdbNeflisClase() {
+    public OmdbNeflisClase(String title, String year, String director, String runtime, String plot, String actors, Integer totalSeasons, String type) {
+        Title = title;
+        Year = year;
+        Director = director;
+        Runtime = runtime;
+        Plot = plot;
+        Actors = actors;
+        this.totalSeasons = totalSeasons;
+        Type = type;
     }
 
+    private String Plot;
+    private String Actors;
+    private Integer totalSeasons = null;
+    private String Type;
+
+    public OmdbNeflisClase(){}
+
+
+
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        Title = title;
     }
 
     public String getYear() {
-        return year;
+        return Year;
     }
 
     public void setYear(String year) {
-        this.year = year;
+        Year = year;
     }
 
     public String getDirector() {
-        return director;
+        return Director;
     }
 
     public void setDirector(String director) {
-        this.director = director;
+        Director = director;
     }
 
     public String getRuntime() {
-        return runtime;
+        return Runtime;
     }
 
     public void setRuntime(String runtime) {
-        this.runtime = runtime;
+        Runtime = runtime;
     }
 
     public String getPlot() {
-        return plot;
+        return Plot;
     }
 
     public void setPlot(String plot) {
-        this.plot = plot;
+        Plot = plot;
     }
 
-    public List<String> getActors() {
-        return actors;
+    public String getActors() {
+        return Actors;
     }
 
-    public void setActors(List<String> actors) {
-        this.actors = actors;
+    public void setActors(String actors) {
+        Actors = actors;
     }
 
     public Integer getTotalSeasons() {
@@ -75,10 +92,15 @@ public class OmdbNeflisClase {
     }
 
     public String getType() {
-        return type;
+        return Type;
     }
 
     public void setType(String type) {
-        this.type = type;
+        Type = type;
     }
+
+
+
+
+
 }

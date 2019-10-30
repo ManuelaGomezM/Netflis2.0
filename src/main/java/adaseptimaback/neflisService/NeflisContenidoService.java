@@ -10,14 +10,11 @@ import java.util.stream.Collectors;
 
     @Service
 
-    public class NeflisService {
+    public class NeflisContenidoService {
         private List<Response> contenidos;
         @Autowired
         private NeflisStorage neflisStorage;
         private Integer id;
-
-
-
 
 
         public List<Response> contenidos(String titulo) {

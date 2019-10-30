@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class Usuario {
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
-
+    private Long id;
     public Usuario(){}
 
     public void yaLoViste(Contenido unContenido) {
