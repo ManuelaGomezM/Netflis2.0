@@ -14,8 +14,9 @@ public class Response implements Serializable {
     private String genre = null;
     private String actors = null;
     private String plot = null;
-    private List<Temporada> seasons = null;
-     private List<Capitulo> episodes = null;
+   // private List<Temporada> seasons = null;
+    private Integer seasons=null;
+    private List<Capitulo> episodes = null;
     private Integer totalSeasons=null;
 
 
@@ -27,7 +28,7 @@ public class Response implements Serializable {
         this.id = c.getId();
         this.title = c.getTitulo();
         this.duration = c.getDuracion();
-        //this.actors = c.nombresDeActores();
+        this.actors = String.join(" , ",c.nombresDeActores());
         this.genre = c.getGenero();
     }
 
@@ -36,10 +37,10 @@ public class Response implements Serializable {
         this.actors=omdbNeflisClase.getActors();
         this.year=omdbNeflisClase.getYear();
         this.director=omdbNeflisClase.getDirector();
-        //this.duration= Integer.valueOf(omdbNeflisClase.getRuntime().split("\\s")[0]);
+        this.duration= Integer.valueOf(omdbNeflisClase.getRuntime().split("\\s")[0]);
         this.plot=omdbNeflisClase.getPlot();
-        this.totalSeasons=omdbNeflisClase.getTotalSeasons();
-
+        this.totalSeasons= Integer.valueOf(omdbNeflisClase.getTotalSeasons());//ver esto
+        this.genre=omdbNeflisClase.getGenre();
         return this;
     }
 
@@ -107,11 +108,11 @@ public class Response implements Serializable {
         this.plot = plot;
     }
 
-    public List<Temporada> getSeasons() {
+    public Integer getSeasons() {
         return seasons;
     }
 
-    public void setSeasons(List<Temporada> seasons) {
+    public void setSeasons(Integer seasons) {
         this.seasons = seasons;
     }
 
