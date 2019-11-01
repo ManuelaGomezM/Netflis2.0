@@ -15,7 +15,7 @@ public class Response implements Serializable {
     private String actors = null;
     private String plot = null;
    // private List<Temporada> seasons = null;
-    private Integer seasons=null;
+    //private Integer seasons=null;
     private List<Capitulo> episodes = null;
     private Integer totalSeasons=null;
 
@@ -108,13 +108,13 @@ public class Response implements Serializable {
         this.plot = plot;
     }
 
-    public Integer getSeasons() {
-        return seasons;
-    }
+   // public Integer getSeasons() {
+       // return seasons;
+   // }
 
-    public void setSeasons(Integer seasons) {
-        this.seasons = seasons;
-    }
+    //public void setSeasons(Integer seasons) {
+       // this.seasons = seasons;
+    //}
 
     public List<Capitulo> getEpisodes() {
         return episodes;

@@ -25,7 +25,7 @@ import java.util.List;
         }
 
         @GetMapping("/contenido")
-        public Response contenidoOmdb(@RequestParam(value = "title", required = false) String titulo) {
+        public Response contenidoOmdb(@RequestParam(value = "title") String titulo) {
                 return neflisOmdbService.contenido(titulo);
 
       /**  @PostMapping("/mascotas")

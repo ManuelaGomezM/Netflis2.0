@@ -5,12 +5,9 @@
   "duration": 55,
   "genre": "Action",
   "director": "N/A",
-  "actors": [
-    "Peter Dinklage",
-    "Emilia Clarke",
-    "Lena Headey",
-    "KitHarington"
-  ],
+  "actors":
+    "Peter Dinklage,Emilia Clarke,Lena Headey,KitHarington"
+  ,
   "plot": "Nine noble families fight for control over the mythical lands of Westeros, while an ancient enemy returns after being dormant for thousands of years",
   "seasons": [
     {
@@ -22,19 +19,16 @@
           "id": 1234,
           "number": 1,
           "duration": 57 ,
-          "guest_actors": [
-            "Roberto Patinson",
-            "El enano"
-          ]
+          "guest_actors": "Roberto Patinson,El enano"
+
         },
         {
           "id": 1235,
           "number": 2,
           "duration": "59 min",
-          "guest_actors": [
-            "Micky Vainilla",
-            "Violencia Rivas"
-          ]
+          "guest_actors":
+            "Micky Vainilla,Violencia Rivas"
+
         }
       ]
     }
