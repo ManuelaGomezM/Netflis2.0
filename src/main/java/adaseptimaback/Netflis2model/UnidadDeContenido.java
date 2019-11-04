@@ -1,11 +1,16 @@
 package adaseptimaback.Netflis2model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public abstract class UnidadDeContenido implements Contenido {
+    @JsonProperty ("genre")
     public String genero;
+    @JsonProperty("title")
     private String titulo;
     private Long id;
+    @JsonProperty("duration")
     private Integer duracion;
 
     public UnidadDeContenido(){    }

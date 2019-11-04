@@ -23,7 +23,6 @@ import java.util.List;
           //  if (neflisContenidoService.contenidos(titulo).equals(false));{
                 return neflisContenidoService.contenidos(titulo);
         }
-
         @GetMapping("/contenido")
         public Response contenidoOmdb(@RequestParam(value = "title") String titulo) {
                 return neflisOmdbService.contenido(titulo);

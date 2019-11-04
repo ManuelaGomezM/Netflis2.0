@@ -1,14 +1,21 @@
 package adaseptimaback.Netflis2model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 
 public class Capitulo extends UnidadDeContenido {
+    @JsonProperty ("number")
     private Integer numeroDeCapitulo;
+    @JsonProperty("guest_actors")
     private List<Actor> actoresInvitados = new ArrayList<>();
+    @JsonIgnore
     private Temporada temporada;
+    @JsonIgnore
     private Serie serie;
 
     public Capitulo(){}

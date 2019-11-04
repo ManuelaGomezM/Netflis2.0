@@ -54,7 +54,7 @@ public class SerieTest {
 
         Sherlock.agregarTemporada(temporada1);
         Sherlock.agregarTemporada(temporada2);
-        assertEquals(2,Sherlock.cuantasTemporadasTenes().intValue());
+        assertEquals(2,Sherlock.totalSeasons().intValue());
 
     }
     /**vistoCompleto**/

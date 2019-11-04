@@ -1,18 +1,25 @@
 package adaseptimaback.Netflis2model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Temporada  {
+    @JsonIgnore
     private Serie serie;
+    @JsonProperty("number")
     private Integer numeroDeTemporada;
-    private List<Capitulo> capitulos2 = new ArrayList<>();
+    @JsonProperty("episodes")
+    private List<Capitulo> capitulos = new ArrayList<>();
+
     private Long id;
 
 
 
     public Integer cantidadDeCapitulosEnTemporada() {
-        return capitulos2.size();
+        return capitulos.size();
     }
 
     public Integer getNumeroDeTemporada() {
@@ -24,22 +31,22 @@ public class Temporada  {
     }
 
     public void agregarCapitulo(Capitulo unCapitulo) {
-        this.capitulos2.add(unCapitulo);
+        this.capitulos.add(unCapitulo);
     }
 
     public boolean vistoCompleto(Usuario unUsuario) {
-        return this.capitulos2.stream()
+        return this.capitulos.stream()
                 .allMatch(capitulo -> capitulo.vistoCompleto(unUsuario));
     }
 
     public Integer cuantosMinutosDuraLatemporadaCompleta() {
-        return capitulos2.stream()
+        return capitulos.stream()
                 .mapToInt(capitulo -> capitulo.getDuracion())
                 .sum();
     }
 
     public Capitulo ultimoCapituloDisponible() {
-        return capitulos2.get(capitulos2.size()-1);
+        return capitulos.get(capitulos.size()-1);
     }
 
     public Long getId() {

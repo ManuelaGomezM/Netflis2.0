@@ -20,7 +20,7 @@ public class OmdbNeflisClase implements Serializable {
     private String totalSeasons = null;
     private String Type;
     private String Genre;
-
+    private Integer Seasons;
     @JsonCreator
     public OmdbNeflisClase(@JsonProperty String Title,
                            @JsonProperty String Year,
@@ -30,7 +30,8 @@ public class OmdbNeflisClase implements Serializable {
                            @JsonProperty String Actors,
                            @JsonProperty String totalSeasons,
                            @JsonProperty String Type,
-                           @JsonProperty String Genre) {
+                           @JsonProperty String Genre,
+                           @JsonProperty String Season) {
         this.Title = Title;
         this.Year = Year;
         this.Director = Director;
@@ -40,6 +41,7 @@ public class OmdbNeflisClase implements Serializable {
         this.totalSeasons = totalSeasons;
         this.Type = Type;
         this.Genre=Genre;
+
     }
 
     public String getTitle() {
@@ -177,11 +179,11 @@ public class OmdbNeflisClase implements Serializable {
         Actors = actors;
     }
 
-    public Integer getTotalSeasons() {
+    public Integer getNumber_of_seasons() {
         return totalSeasons;
     }
 
-    public void setTotalSeasons(Integer totalSeasons) {
+    public void setNumber_of_seasons(Integer totalSeasons) {
         this.totalSeasons = totalSeasons;
     }
 

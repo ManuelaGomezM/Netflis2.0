@@ -14,24 +14,22 @@ public class Response implements Serializable {
     private String genre = null;
     private String actors = null;
     private String plot = null;
-   // private List<Temporada> seasons = null;
+   private List<Temporada> seasons = null;
     //private Integer seasons=null;
     private List<Capitulo> episodes = null;
-    private Integer totalSeasons=null;
-
-
-
+    private Integer number_of_seasons =null;
+    private Integer number_of_episodes=null;
+    private Serie serie;
     public Response() {
     }
-
     public Response(Contenido c) {
         this.id = c.getId();
         this.title = c.getTitulo();
         this.duration = c.getDuracion();
         this.actors = String.join(" , ",c.nombresDeActores());
         this.genre = c.getGenero();
-    }
 
+    }
  public Response conviertoOmdbAResponse(OmdbNeflisClase omdbNeflisClase){
         this.title=omdbNeflisClase.getTitle();
         this.actors=omdbNeflisClase.getActors();
@@ -39,8 +37,9 @@ public class Response implements Serializable {
         this.director=omdbNeflisClase.getDirector();
         this.duration= Integer.valueOf(omdbNeflisClase.getRuntime().split("\\s")[0]);
         this.plot=omdbNeflisClase.getPlot();
-        this.totalSeasons= Integer.valueOf(omdbNeflisClase.getTotalSeasons());//ver esto
+        this.number_of_seasons =(Integer.valueOf(omdbNeflisClase.getTotalSeasons()));//ver esto
         this.genre=omdbNeflisClase.getGenre();
+
         return this;
     }
 
@@ -108,13 +107,13 @@ public class Response implements Serializable {
         this.plot = plot;
     }
 
-   // public Integer getSeasons() {
-       // return seasons;
+ //  public Integer getSeasons() {
+    // return this.seasons;
    // }
 
-    //public void setSeasons(Integer seasons) {
-       // this.seasons = seasons;
-    //}
+  //  public void setSeasons(Integer seasons) {
+   //    this.seasons = seasons;
+   // }
 
     public List<Capitulo> getEpisodes() {
         return episodes;
@@ -122,5 +121,21 @@ public class Response implements Serializable {
 
     public void setEpisodes(List<Capitulo> episodes) {
         this.episodes = episodes;
+    }
+
+    public Integer getNumber_of_seasons() {
+        return this.number_of_seasons;
+    }
+
+   public void setNumber_of_seasons(Integer number_of_seasons) {
+        this.number_of_seasons = number_of_seasons;
+    }
+
+    public Integer getNumber_of_episodes() {
+        return number_of_episodes;
+    }
+
+    public void setNumber_of_episodes(Integer number_of_episodes) {
+        this.number_of_episodes = number_of_episodes;
     }
 }

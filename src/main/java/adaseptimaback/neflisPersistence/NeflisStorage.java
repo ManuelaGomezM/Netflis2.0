@@ -24,7 +24,6 @@ import java.util.List;
                         new TypeReference<List<Response>>() {
                         }
                 );
-
             } catch (IOException e) {
                 e.printStackTrace();
                 throw new RuntimeException("No se pudo leer el archivo",e);
