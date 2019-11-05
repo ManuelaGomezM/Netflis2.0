@@ -1,16 +1,14 @@
 package adaseptimaback.neflisService;
 
-import adaseptimaback.Netflis2model.Capitulo;
 import adaseptimaback.Netflis2model.Temporada;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.context.annotation.Bean;
 
 import java.io.Serializable;
-import java.util.List;
+
 @JsonIgnoreProperties (ignoreUnknown = true)
-public class OmdbNeflisClase implements Serializable {
+public class OmdbNeflisClaseContenido implements Serializable {
     private String Title;
     private String Year;
     private String Director;
@@ -22,16 +20,16 @@ public class OmdbNeflisClase implements Serializable {
     private String Genre;
     private Integer Seasons;
     @JsonCreator
-    public OmdbNeflisClase(@JsonProperty String Title,
-                           @JsonProperty String Year,
-                           @JsonProperty String Director,
-                           @JsonProperty String Runtime,
-                           @JsonProperty String Plot,
-                           @JsonProperty String Actors,
-                           @JsonProperty String totalSeasons,
-                           @JsonProperty String Type,
-                           @JsonProperty String Genre,
-                           @JsonProperty String Season) {
+    public OmdbNeflisClaseContenido(@JsonProperty String Title,
+                                    @JsonProperty String Year,
+                                    @JsonProperty String Director,
+                                    @JsonProperty String Runtime,
+                                    @JsonProperty String Plot,
+                                    @JsonProperty String Actors,
+                                    @JsonProperty String totalSeasons,
+                                    @JsonProperty String Type,
+                                    @JsonProperty String Genre
+                                   ) {
         this.Title = Title;
         this.Year = Year;
         this.Director = Director;
@@ -42,7 +40,8 @@ public class OmdbNeflisClase implements Serializable {
         this.Type = Type;
         this.Genre=Genre;
 
-    }
+}
+
 
     public String getTitle() {
         return Title;
@@ -105,6 +104,8 @@ public class OmdbNeflisClase implements Serializable {
     public void setGenre(String genre) {
         Genre = genre;
     }
+
+
     /*private String Title;
     private String Year;
     private String Director;
@@ -114,7 +115,7 @@ public class OmdbNeflisClase implements Serializable {
     private Integer totalSeasons = null;
     private String Type;
 
-    public OmdbNeflisClase(String title, String year, String director, String runtime, String plot, String actors, Integer totalSeasons, String type) {
+    public OmdbNeflisClaseContenido(String title, String year, String director, String runtime, String plot, String actors, Integer totalSeasons, String type) {
         this.Title = title;
         this.Year = year;
         this.Director = director;
@@ -127,7 +128,7 @@ public class OmdbNeflisClase implements Serializable {
 
 
 
-    public OmdbNeflisClase(){}
+    public OmdbNeflisClaseContenido(){}
 
 
 

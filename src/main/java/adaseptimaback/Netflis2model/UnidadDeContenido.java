@@ -1,7 +1,6 @@
 package adaseptimaback.Netflis2model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.util.List;
 
 public abstract class UnidadDeContenido implements Contenido {

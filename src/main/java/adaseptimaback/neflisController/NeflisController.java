@@ -27,6 +27,8 @@ import java.util.List;
         public Response contenidoOmdb(@RequestParam(value = "title") String titulo) {
                 return neflisOmdbService.contenido(titulo);
 
+
+
       /**  @PostMapping("/mascotas")
         public Mascota addMascota(@RequestBody Mascota mascota) {
             return this.mascotaService.agregarMascota(mascota);

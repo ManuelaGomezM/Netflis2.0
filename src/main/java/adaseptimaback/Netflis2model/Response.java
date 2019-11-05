@@ -1,6 +1,6 @@
 package adaseptimaback.Netflis2model;
 
-import adaseptimaback.neflisService.OmdbNeflisClase;
+import adaseptimaback.neflisService.OmdbNeflisClaseContenido;
 
 import java.io.Serializable;
 import java.util.List;
@@ -16,7 +16,7 @@ public class Response implements Serializable {
     private String plot = null;
    private List<Temporada> seasons = null;
     //private Integer seasons=null;
-    private List<Capitulo> episodes = null;
+  //  private List<Capitulo> episodes = null;
     private Integer number_of_seasons =null;
     private Integer number_of_episodes=null;
     private Serie serie;
@@ -30,7 +30,7 @@ public class Response implements Serializable {
         this.genre = c.getGenero();
 
     }
- public Response conviertoOmdbAResponse(OmdbNeflisClase omdbNeflisClase){
+ public Response conviertoOmdbAResponse(OmdbNeflisClaseContenido omdbNeflisClase){
         this.title=omdbNeflisClase.getTitle();
         this.actors=omdbNeflisClase.getActors();
         this.year=omdbNeflisClase.getYear();
@@ -41,6 +41,10 @@ public class Response implements Serializable {
         this.genre=omdbNeflisClase.getGenre();
 
         return this;
+    }
+
+    public void addSeason(Temporada temporada){
+        this.seasons.add(temporada);
     }
 
     public Long getId() {
@@ -115,13 +119,13 @@ public class Response implements Serializable {
    //    this.seasons = seasons;
    // }
 
-    public List<Capitulo> getEpisodes() {
-        return episodes;
-    }
+  //  public List<Capitulo> getEpisodes() {
+    //    return episodes;
+    //}
 
-    public void setEpisodes(List<Capitulo> episodes) {
-        this.episodes = episodes;
-    }
+   // public void setEpisodes(List<Capitulo> episodes) {
+      //  this.episodes = episodes;
+    //}
 
     public Integer getNumber_of_seasons() {
         return this.number_of_seasons;
@@ -137,5 +141,13 @@ public class Response implements Serializable {
 
     public void setNumber_of_episodes(Integer number_of_episodes) {
         this.number_of_episodes = number_of_episodes;
+    }
+
+    public List<Temporada> getSeasons() {
+        return seasons;
+    }
+
+    public void setSeasons(List<Temporada> seasons) {
+        this.seasons = seasons;
     }
 }

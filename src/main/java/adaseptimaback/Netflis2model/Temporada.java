@@ -19,7 +19,7 @@ public class Temporada  {
 
 
     public Integer cantidadDeCapitulosEnTemporada() {
-        return capitulos.size();
+        return getCapitulos().size();
     }
 
     public Integer getNumeroDeTemporada() {
@@ -31,22 +31,22 @@ public class Temporada  {
     }
 
     public void agregarCapitulo(Capitulo unCapitulo) {
-        this.capitulos.add(unCapitulo);
+        this.getCapitulos().add(unCapitulo);
     }
 
     public boolean vistoCompleto(Usuario unUsuario) {
-        return this.capitulos.stream()
+        return this.getCapitulos().stream()
                 .allMatch(capitulo -> capitulo.vistoCompleto(unUsuario));
     }
 
     public Integer cuantosMinutosDuraLatemporadaCompleta() {
-        return capitulos.stream()
+        return getCapitulos().stream()
                 .mapToInt(capitulo -> capitulo.getDuracion())
                 .sum();
     }
 
     public Capitulo ultimoCapituloDisponible() {
-        return capitulos.get(capitulos.size()-1);
+        return getCapitulos().get(getCapitulos().size()-1);
     }
 
     public Long getId() {
@@ -55,5 +55,13 @@ public class Temporada  {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Capitulo> getCapitulos() {
+        return capitulos;
+    }
+
+    public void setCapitulos(List<Capitulo> capitulos) {
+        this.capitulos = capitulos;
     }
 }
