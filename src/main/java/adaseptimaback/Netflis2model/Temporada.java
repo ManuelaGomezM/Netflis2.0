@@ -11,14 +11,12 @@ public class Temporada  {
     private Serie serie;
     @JsonProperty("number")
     private Integer numeroDeTemporada;
-    @JsonProperty("episodes")
+    @JsonProperty("Episodes")
     private List<Capitulo> capitulos = new ArrayList<>();
 
     private Long id;
 
-
-
-    public Integer cantidadDeCapitulosEnTemporada() {
+    public Integer sizeTemporada() {
         return getCapitulos().size();
     }
 

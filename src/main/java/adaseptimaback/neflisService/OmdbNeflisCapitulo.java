@@ -1,13 +1,20 @@
 package adaseptimaback.neflisService;
-
 import adaseptimaback.Netflis2model.Capitulo;
 import adaseptimaback.Netflis2model.Temporada;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class OmdbNeflisCapitulo {
-
     private String Episode;
 // hacer constructores de omdb con json properties
+    public OmdbNeflisCapitulo(){}
+    @JsonCreator
+    public OmdbNeflisCapitulo(
+            @JsonProperty String Episode) {
+        this.Episode = Episode;
+    }
+
 
     public Capitulo convertirOmdbACapitulo() {
         Capitulo cap = new Capitulo();

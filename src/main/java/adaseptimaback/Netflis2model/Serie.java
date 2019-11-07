@@ -65,7 +65,7 @@ public class Serie implements Contenido {
     @JsonProperty( "number_of_episodes")
     public Integer cantidadDeCapitulosenLaSerie(){
         return this.temporadas.stream()
-                .mapToInt(t->t.cantidadDeCapitulosEnTemporada())
+                .mapToInt(t->t.sizeTemporada())
                 .sum();
     }
 

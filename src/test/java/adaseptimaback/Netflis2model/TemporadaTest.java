@@ -46,7 +46,7 @@ public class TemporadaTest {
     void cantidadDeCapTest(){
         temporada1.agregarCapitulo(capitulo1);
         temporada1.agregarCapitulo(capitulo2);
-        assertEquals(2,temporada1.cantidadDeCapitulosEnTemporada().intValue());
+        assertEquals(2,temporada1.sizeTemporada().intValue());
 
     }
 

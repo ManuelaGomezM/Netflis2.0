@@ -46,7 +46,7 @@ public class NeflisOmdbService {
     public Response contenido(String titulo) {
         Response response = new Response();
        response.conviertoOmdbAResponse(this.omdbResponsePorTitulo(titulo));
-       if(response.getSeasons() != null){
+       if(response.getNumber_of_seasons() != null){
            response.addSeason(this.omdbResponsePorTituloTEmp1(titulo).convertirOmdbATemporada());
        }
        return response;
