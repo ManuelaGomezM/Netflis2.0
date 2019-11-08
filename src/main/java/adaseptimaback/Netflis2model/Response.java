@@ -3,6 +3,7 @@ package adaseptimaback.Netflis2model;
 import adaseptimaback.neflisService.OmdbNeflisClaseContenido;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Response implements Serializable {
@@ -14,7 +15,7 @@ public class Response implements Serializable {
     private String genre = null;
     private String actors = null;
     private String plot = null;
-   private List<Temporada> seasons = null;
+   private List<Temporada> seasons=new ArrayList<Temporada>();
     //private Integer seasons=null;
   //  private List<Capitulo> episodes = null;
     private Integer number_of_seasons =null;

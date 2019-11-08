@@ -2,6 +2,7 @@ package adaseptimaback.neflisService;
 
 import adaseptimaback.Netflis2model.Response;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.hibernate.validator.constraints.URL;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;

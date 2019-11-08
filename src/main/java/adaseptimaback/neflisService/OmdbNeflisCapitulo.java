@@ -6,13 +6,16 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class OmdbNeflisCapitulo {
+    private String Title;
     private String Episode;
 // hacer constructores de omdb con json properties
     public OmdbNeflisCapitulo(){}
     @JsonCreator
     public OmdbNeflisCapitulo(
-            @JsonProperty String Episode) {
+            @JsonProperty String Episode,
+            @JsonProperty String Title) {
         this.Episode = Episode;
+        this.Title=Title;
     }
 
 
@@ -30,5 +33,13 @@ public class OmdbNeflisCapitulo {
 
     public void setEpisode(String episode) {
         Episode = episode;
+    }
+
+    public String getTitle() {
+        return Title;
+    }
+
+    public void setTitle(String title) {
+        Title = title;
     }
 }
