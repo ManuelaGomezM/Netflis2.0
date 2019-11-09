@@ -2,6 +2,7 @@ package adaseptimaback.neflisPersistence;
 import adaseptimaback.Netflis2model.Response;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
@@ -11,12 +12,12 @@ import java.util.List;
 
     @Component
     public class NeflisStorage {
+        @Autowired
         private ObjectMapper objectMapper;
 
         public NeflisStorage(ObjectMapper objectMapper) {
             this.objectMapper = objectMapper;
         }
-
         public List<Response> peliculas() {
             try {
                 return objectMapper.readValue(
@@ -54,10 +55,10 @@ import java.util.List;
 
         }
 
-     /**   public void nuevoContenido (List <Contenido> contenidosActualizados){
+        public void save (List <Response> contenidosActualizados){
             try {
                 objectMapper.writeValue(
-                        new File("verRuta"),contenidosActualizados);
+                        new File("src\\main\\resources\\contenidos.json"),contenidosActualizados);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -67,6 +68,4 @@ import java.util.List;
 
         }
 
-
-    }*/
-}
+        }

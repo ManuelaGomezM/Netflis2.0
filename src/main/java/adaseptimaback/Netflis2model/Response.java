@@ -38,7 +38,7 @@ public class Response implements Serializable {
         this.director=omdbNeflisClase.getDirector();
         this.duration= Integer.valueOf(omdbNeflisClase.getRuntime().split("\\s")[0]);
         this.plot=omdbNeflisClase.getPlot();
-        this.number_of_seasons =(Integer.valueOf(omdbNeflisClase.getTotalSeasons()));//ver esto
+        this.number_of_seasons = omdbNeflisClase.getTotalSeasons()!= null ? (Integer.valueOf(omdbNeflisClase.getTotalSeasons())): null;//ver esto
         this.genre=omdbNeflisClase.getGenre();
 
         return this;

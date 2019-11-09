@@ -23,14 +23,22 @@ import java.util.stream.Collectors;
                 if (titulo == null) {
                     return contenidos;
                 } else {
-                    return contenidos.stream().filter(response -> response.getTitle().equals(titulo))
-                            .collect(Collectors.toList());
+                    return this.filtrarContenidoPorTitulo(titulo);
                 }
             } catch (Exception e) {
                 e.printStackTrace();
             }return null;
 //poner excepcion con leyenda correspondiente
       }
+      public List<Response> filtrarContenidoPorTitulo(String titulo){
+            return contenidos.stream().filter(response -> response.getTitle().equals(titulo))
+                    .collect(Collectors.toList());
+      }
+
+        public List<Response> filtrarContenidoPorTitulo2(String titulo,List <Response> contenidos){
+            return contenidos.stream().filter(response -> response.getTitle().equals(titulo))
+                    .collect(Collectors.toList());
+        }
     }
 
         /*esta en rojo y no se por que

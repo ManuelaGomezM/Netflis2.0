@@ -1,16 +1,1 @@
-
-{ "id": 243567734,
-    "title": "Titanic",
-  "year": 1997,
-  "duration": 194 ,
-  "genre": "Drama",
-  "director": "James Cameron",
-  "actors": ["Leonardo DiCaprio",
-    "Kate Winslet", "Billy Zane", "Kathy Bates "],
-  "plot": "A seventeen year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic"
-}
-
-
-
-
-
+[{"id":null,"title":"It","year":"2017","director":"Andy Muschietti","duration":135,"genre":"Horror","actors":"Jaeden Martell, Jeremy Ray Taylor, Sophia Lillis, Finn Wolfhard","plot":"In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.","seasons":[],"number_of_seasons":null,"number_of_episodes":null}]
