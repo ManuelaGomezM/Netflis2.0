@@ -18,41 +18,19 @@ import java.util.List;
         public NeflisStorage(ObjectMapper objectMapper) {
             this.objectMapper = objectMapper;
         }
-        public List<Response> peliculas() {
-            try {
-                return objectMapper.readValue(
-                        new File("src\\main\\resources\\peliculas.json"),
-                        new TypeReference<List<Response>>() {
-                        }
-                );
-            } catch (IOException e) {
-                e.printStackTrace();
-                throw new RuntimeException("No se pudo leer el archivo",e);
-
-            }
-        }
-        public List<Response> series() {
-            try {
-                return objectMapper.readValue(
-                        new File("src\\main\\resources\\serie.json"),
-                        new TypeReference<List<Response>>() {
-                        }
-                );
-
-            } catch (IOException e) {
-                e.printStackTrace();
-                throw new RuntimeException("No se pudo leer el archivo",e);
-
-            }
-        }
-
 
         public List<Response> contenidos(){
-            List<Response> contenidos= new ArrayList<>();
-            contenidos.addAll(this.series());
-            contenidos.addAll(this.peliculas());
-            return contenidos;
+            try {
+                return objectMapper.readValue(
+                        new File("src\\main\\resources\\contenidos.json"),
+                        new TypeReference<List<Response>>() {
+                        }
+                );
 
+            } catch (IOException e) {
+                e.printStackTrace();
+                throw new RuntimeException("No se pudo leer el archivo",e);
+            }
         }
 
         public void save (List <Response> contenidosActualizados){
@@ -62,10 +40,36 @@ import java.util.List;
 
             } catch (IOException e) {
                 e.printStackTrace();
-                throw new RuntimeException("No se pudo escribir es archivo",e);
-
+                throw new RuntimeException("No se pudo escribir es archivo contenidos.json",e);
             }
-
         }
 
-        }
+        /**
+         public List<Response> peliculas() {
+         try {
+         return objectMapper.readValue(
+         new File("src\\main\\resources\\peliculas.json"),
+         new TypeReference<List<Response>>() {
+         }
+         );
+         } catch (IOException e) {
+         e.printStackTrace();
+         throw new RuntimeException("No se pudo leer el archivo",e);
+
+         }
+         }
+         public List<Response> series() {
+         try {
+         return objectMapper.readValue(
+         new File("src\\main\\resources\\serie.json"),
+         new TypeReference<List<Response>>() {
+         }
+         );
+
+         } catch (IOException e) {
+         e.printStackTrace();
+         throw new RuntimeException("No se pudo leer el archivo",e);
+
+         }
+         }*/
+    }

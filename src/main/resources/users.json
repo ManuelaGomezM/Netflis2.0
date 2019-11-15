@@ -1,0 +1,62 @@
+
+[
+  {
+    "id" : 1,
+    "contenidosVistosPorUsuario" : [
+      {"id":null,"title":"Toy Story",
+        "year":"1995","director":"John Lasseter",
+        "duration":81,"genre":"Animation, Adventure, Comedy, Family, Fantasy",
+        "actors":"Tom Hanks, Tim Allen, Don Rickles, Jim Varney",
+        "plot":"A cowboy doll is profoundly threatened and jealous when a new spaceman figure supplants him as top toy in a boy's room.",
+        "seasons":[],
+        "number_of_seasons":null,
+        "number_of_episodes":null},
+      {"id":null,"title":"Harry Potter and the Deathly Hallows: Part 2",
+        "year":"2011",
+        "director":"David Yates",
+        "duration":130,
+        "genre":"Adventure, Drama, Fantasy, Mystery",
+        "actors":"Ralph Fiennes, Michael Gambon, Alan Rickman, Daniel Radcliffe",
+        "plot":"Harry, Ron, and Hermione search for Voldemort's remaining Horcruxes in their effort to destroy the Dark Lord as the final battle rages on at Hogwarts.",
+        "seasons":[],
+        "number_of_seasons":null,
+        "number_of_episodes":null},
+      {"id":null,"title":"The Lion King",
+        "year":"1994","director":"Roger Allers, Rob Minkoff",
+        "duration":88,
+        "genre":"Animation, Adventure, Drama, Family, Musical",
+        "actors":"Rowan Atkinson, Matthew Broderick, Niketa Calame-Harris, Jim Cummings",
+        "plot":"A Lion cub crown prince is tricked by a treacherous uncle into thinking he caused his father's death and flees into exile in despair, only to learn in adulthood his identity and his responsibilities.",
+        "seasons":[],
+        "number_of_seasons":null,
+        "number_of_episodes":null}
+    ]
+  },
+  {
+    "id" : 2,
+    "contenidosVistosPorUsuario" : [
+      {"id":null,
+        "title":"Inception",
+        "year":"2010",
+        "director":"Christopher Nolan",
+        "duration":148,
+        "genre":"Action, Adventure, Sci-Fi, Thriller",
+        "actors":"Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
+        "plot":"A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+        "seasons":[],
+        "number_of_seasons":null,
+        "number_of_episodes":null},
+      {"id":null,
+        "title":"It",
+        "year":"2017",
+        "director":"Andy Muschietti",
+        "duration":135,
+        "genre":"Horror",
+        "actors":"Jaeden Martell, Jeremy Ray Taylor, Sophia Lillis, Finn Wolfhard",
+        "plot":"In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
+        "seasons":[],
+        "number_of_seasons":null,
+        "number_of_episodes":null}
+    ]
+  }
+]

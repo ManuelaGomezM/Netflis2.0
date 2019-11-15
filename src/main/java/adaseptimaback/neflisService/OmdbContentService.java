@@ -38,7 +38,8 @@ public class OmdbContentService {
             if (contenidito==null||contenidito.isEmpty()) {
                 List<Response> conteniditoOmdb = new ArrayList<>();
                 conteniditoOmdb.add(this.neflisOmdbService.contenido(titulo));
-                this.neflisStorage.save(conteniditoOmdb);
+                conteniditos.add(this.neflisOmdbService.contenido(titulo));
+                this.neflisStorage.save(conteniditos);
                 return conteniditoOmdb;
             } else if (!contenidito.isEmpty()) {
                 return contenidito;
