@@ -9,7 +9,7 @@ public class Usuario {
     private Long id;
     public Usuario(){}
 
-    public void yaLoViste(Contenido unContenido) {
+    public void ver(Contenido unContenido) {
         this.contenidosVistosPorUsuario.add(unContenido);
 
     }

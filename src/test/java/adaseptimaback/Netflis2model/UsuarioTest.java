@@ -60,9 +60,9 @@ public class UsuarioTest {
     @Test
 
     void unidadesDeContenidoTest(){
-        Vicky.yaLoViste(Sherlock);
-        Vicky.yaLoViste(Lost);
-        Vicky.yaLoViste(CodigoEnigma);
+        Vicky.ver(Sherlock);
+        Vicky.ver(Lost);
+        Vicky.ver(CodigoEnigma);
         assertEquals(3,Vicky.cuantasUnidadesDeContenidoViste().intValue());
 
     }
@@ -75,8 +75,8 @@ public class UsuarioTest {
 
         when(Sherlock.getGenero()).thenReturn("policial");
         when(CodigoEnigma.getGenero()).thenReturn("suspenso");
-        Vicky.yaLoViste(Sherlock);
-        Vicky.yaLoViste(CodigoEnigma);
+        Vicky.ver(Sherlock);
+        Vicky.ver(CodigoEnigma);
         assertEquals(Arrays.asList("policial","suspenso"),Vicky.generosVistosPorUsuario());
     }
 
@@ -89,8 +89,8 @@ public class UsuarioTest {
 
         when(Sherlock.getGenero()).thenReturn("policial");
         when(CodigoEnigma.getGenero()).thenReturn("policial");
-        Vicky.yaLoViste(Sherlock);
-        Vicky.yaLoViste(CodigoEnigma);
+        Vicky.ver(Sherlock);
+        Vicky.ver(CodigoEnigma);
         assertEquals(Arrays.asList(Sherlock, CodigoEnigma),Vicky.contenidosPorGenero("policial"));
 
 
@@ -106,8 +106,8 @@ public class UsuarioTest {
         when(CodigoEnigma.getDuracion()).thenReturn(20);
         when(Sherlock.getGenero()).thenReturn("policial");
         when(CodigoEnigma.getGenero()).thenReturn("policial");
-        Anita.yaLoViste(Sherlock);
-        Anita.yaLoViste(CodigoEnigma);
+        Anita.ver(Sherlock);
+        Anita.ver(CodigoEnigma);
         assertEquals(70,Anita.minutosVistosporGenero("policial").intValue());
     }
 
@@ -120,8 +120,8 @@ public class UsuarioTest {
         when(CodigoEnigma.getDuracion()).thenReturn(20);
         when(Sherlock.getGenero()).thenReturn("policial");
         when(CodigoEnigma.getGenero()).thenReturn("suspenso");
-        Anita.yaLoViste(Sherlock);
-        Anita.yaLoViste(CodigoEnigma);
+        Anita.ver(Sherlock);
+        Anita.ver(CodigoEnigma);
         assertEquals("policial", Anita.generoPreferido());
 
 
