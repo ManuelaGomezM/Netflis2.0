@@ -61,4 +61,11 @@ public class Usuario {
     public Boolean esFanDe(Actor actor) {
         return contenidosVistosPorUsuario.stream().allMatch(c-> c.actuo(actor));
     }
-}
+
+    public List <Contenido> contenidosVistosCompletos(){
+        return contenidosVistosPorUsuario.stream()
+                .filter(c -> this.visteCompletoEsto(c))
+                .collect(Collectors.toList());
+
+    }}
+
