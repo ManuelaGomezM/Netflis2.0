@@ -51,7 +51,6 @@ public class Usuario {
                 .sum();
     }
 
-
     public String generoPreferido() {
         return this.generosVistosPorUsuario().stream()
                 .max(Comparator.comparing(genero -> this.minutosVistosporGenero(genero)))
@@ -66,6 +65,6 @@ public class Usuario {
         return contenidosVistosPorUsuario.stream()
                 .filter(c -> this.visteCompletoEsto(c))
                 .collect(Collectors.toList());
-
-    }}
+    }
+}
 
