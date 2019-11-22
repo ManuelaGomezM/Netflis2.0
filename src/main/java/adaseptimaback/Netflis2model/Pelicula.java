@@ -1,12 +1,13 @@
 package adaseptimaback.Netflis2model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Pelicula extends UnidadDeContenido {
     private List<Actor> actoresDePeliculas = new ArrayList<>();
-
 
     public Pelicula(){}
 
@@ -36,6 +37,4 @@ public class Pelicula extends UnidadDeContenido {
 
         return actoresDePeliculas.contains(actor);
     }
-
-
 }
