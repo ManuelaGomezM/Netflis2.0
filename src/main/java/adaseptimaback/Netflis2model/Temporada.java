@@ -3,18 +3,21 @@ package adaseptimaback.Netflis2model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Temporada  {
+    @Id
+    @GeneratedValue
+    private Long id;
     @JsonIgnore
     private Serie serie;
     @JsonProperty("number")
     private Integer numeroDeTemporada;
     @JsonProperty("Episodes")
     private List<Capitulo> capitulos = new ArrayList<>();
-
-    private Long id;
 
     public Integer sizeTemporada() {
         return getCapitulos().size();

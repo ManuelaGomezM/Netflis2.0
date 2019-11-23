@@ -1,4 +1,6 @@
 package adaseptimaback.Netflis2model;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -6,6 +8,8 @@ import java.util.stream.Collectors;
 
 public class Usuario {
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
+    @Id
+    @GeneratedValue
     private Long id;
     public Usuario(){}
 
@@ -51,7 +55,6 @@ public class Usuario {
                 .sum();
     }
 
-
     public String generoPreferido() {
         return this.generosVistosPorUsuario().stream()
                 .max(Comparator.comparing(genero -> this.minutosVistosporGenero(genero)))
@@ -66,6 +69,6 @@ public class Usuario {
         return contenidosVistosPorUsuario.stream()
                 .filter(c -> this.visteCompletoEsto(c))
                 .collect(Collectors.toList());
-
-    }}
+    }
+}
 
