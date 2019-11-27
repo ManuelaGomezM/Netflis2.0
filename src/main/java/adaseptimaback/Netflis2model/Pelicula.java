@@ -1,10 +1,12 @@
 package adaseptimaback.Netflis2model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+@Entity
+@Table(name="Pelicula", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 
 public class Pelicula extends UnidadDeContenido {
     private List<Actor> actoresDePeliculas = new ArrayList<>();

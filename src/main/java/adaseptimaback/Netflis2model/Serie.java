@@ -9,13 +9,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Serie implements Contenido {
-    @JsonProperty ("title")
+  //@JsonProperty ("title")
     private String nombreDeSerie;
-    @JsonProperty("actors")
+   // @JsonProperty("actors")
     private List<Actor> actoresFijosDeLaSerie = new ArrayList<>();
-    @JsonProperty ("seasons")
+    //@JsonProperty ("seasons")
     private List<Temporada> temporadas = new ArrayList<>();
-    @JsonProperty ("genre")
+    //@JsonProperty ("genre")
     private String genero;
     @Id
     @GeneratedValue
@@ -66,7 +66,7 @@ public class Serie implements Contenido {
                 .mapToInt(t -> t.cuantosMinutosDuraLatemporadaCompleta())
                 .sum();
     }
-    @JsonProperty( "number_of_episodes")
+   // @JsonProperty( "number_of_episodes")
     public Integer cantidadDeCapitulosenLaSerie(){
         return this.temporadas.stream()
                 .mapToInt(t->t.sizeTemporada())

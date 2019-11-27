@@ -7,14 +7,14 @@ import javax.persistence.Id;
 import java.util.List;
 
 public abstract class UnidadDeContenido implements Contenido {
-    @JsonProperty ("genre")
+   // @JsonProperty ("genre")
     public String genero;
-    @JsonProperty("title")
+   // @JsonProperty("title")
     private String titulo;
     @Id
     @GeneratedValue
     private Long id;
-    @JsonProperty("duration")
+   // @JsonProperty("duration")
     private Integer duracion;
 
     public UnidadDeContenido(){    }
