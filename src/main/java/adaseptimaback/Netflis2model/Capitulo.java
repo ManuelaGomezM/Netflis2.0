@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+//Se comentaron las anotations de jackson porque la idea es migrar esa busqueda inicial a la base de datos.
 @Entity
 @Table(name="Capitulo", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 
@@ -16,16 +16,16 @@ public class Capitulo extends UnidadDeContenido {
     @Column(name="Id")
     private Long id;
 
-    @JsonProperty ("number")
+   // @JsonProperty ("number")
     @Column(name= "NumerodeCapitulo")
     private Integer numeroDeCapitulo;
-    @JsonProperty("guest_actors")
+   // @JsonProperty("guest_actors")
     @Column (name= "ActoresInvitadosCap")
     private List<Actor> actoresInvitados = new ArrayList<>();
-    @JsonIgnore
+   // @JsonIgnore
     @Column (name="Temporada")
     private Temporada temporada;
-    @JsonIgnore
+   // @JsonIgnore
     @Column(name="Serie")
     private Serie serie;
 

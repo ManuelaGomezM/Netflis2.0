@@ -2,17 +2,19 @@ package adaseptimaback.Netflis2model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.List;
 
 public abstract class UnidadDeContenido implements Contenido {
-    @JsonProperty ("genre")
+    //@JsonProperty ("genre")
     public String genero;
-    @JsonProperty("title")
+   // @JsonProperty("title")
     private String titulo;
     @Id
     @GeneratedValue
+    @Column(name = "ID", unique = true, nullable = false)
     private Long id;
     @JsonProperty("duration")
     private Integer duracion;

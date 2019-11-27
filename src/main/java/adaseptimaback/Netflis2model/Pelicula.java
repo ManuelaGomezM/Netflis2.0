@@ -1,12 +1,15 @@
 package adaseptimaback.Netflis2model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+@Entity
+@Table(name="Pelicula")
 public class Pelicula extends UnidadDeContenido {
+    @Id
+    @GeneratedValue
+    @Column(name = "ID", unique = true, nullable = false)
     private List<Actor> actoresDePeliculas = new ArrayList<>();
 
     public Pelicula(){}
@@ -29,7 +32,7 @@ public class Pelicula extends UnidadDeContenido {
 
 
 //prueba numero mil para dar por vista una pelicula.
-// se entiende que una peli esta vista cuando esta agregada a la colleccion del usuario
+// se entiende que una peli esta vista cuando esta agregada a la coleccion del usuario
     // ese metodo se hizo en el usuario pero esta mal. aplicaria misma solucion a capitulo
 
 

@@ -12,11 +12,11 @@ public class Temporada  {
     @Id
     @GeneratedValue
     private Long id;
-    @JsonIgnore
+    //@JsonIgnore
     private Serie serie;
-    @JsonProperty("number")
+    //@JsonProperty("number")
     private Integer numeroDeTemporada;
-    @JsonProperty("Episodes")
+   // @JsonProperty("Episodes")
     private List<Capitulo> capitulos = new ArrayList<>();
 
     public Integer sizeTemporada() {
