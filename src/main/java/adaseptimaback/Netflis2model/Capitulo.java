@@ -2,20 +2,31 @@ package adaseptimaback.Netflis2model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Entity
+@Table(name="Capitulo", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
+
 public class Capitulo extends UnidadDeContenido {
+    @Id
+    @GeneratedValue
+    @Column(name="Id")
+    private Long id;
+
     @JsonProperty ("number")
+    @Column(name= "NumerodeCapitulo")
     private Integer numeroDeCapitulo;
     @JsonProperty("guest_actors")
+    @Column (name= "ActoresInvitadosCap")
     private List<Actor> actoresInvitados = new ArrayList<>();
     @JsonIgnore
+    @Column (name="Temporada")
     private Temporada temporada;
     @JsonIgnore
+    @Column(name="Serie")
     private Serie serie;
 
     public Capitulo(){}
