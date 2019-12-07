@@ -1,4 +1,7 @@
 package adaseptimaback.Netflis2model;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.ArrayList;
@@ -9,7 +12,9 @@ import java.util.stream.Collectors;
 public class Usuario {
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "incrementator")
+    @GenericGenerator(name= "incrementator",strategy = "increment")
+    @Column(name="Id", unique = true, nullable = false)
     private Long id;
     public Usuario(){}
 

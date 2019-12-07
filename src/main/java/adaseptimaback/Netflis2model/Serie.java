@@ -1,29 +1,34 @@
 package adaseptimaback.Netflis2model;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Entity
+@Table(name="Serie", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 public class Serie implements Contenido {
-    //@JsonProperty ("title")
+    @Id
+    @GeneratedValue(generator = "incrementator")
+    @GenericGenerator(name= "incrementator",strategy = "increment")
+    @Column(name="Id", unique = true, nullable = false)
+    private Long id;
+     //@JsonProperty ("title")
+     @Column(name="Title", unique = true, nullable = false)
     private String nombreDeSerie;
    // @JsonProperty("actors")
+   @Column(name="ActoresFijos", unique = true, nullable = false)
     private List<Actor> actoresFijosDeLaSerie = new ArrayList<>();
    // @JsonProperty ("seasons")
+   @Column(name="Seasons", unique = true, nullable = false)
     private List<Temporada> temporadas = new ArrayList<>();
    // @JsonProperty ("genre")
+   @Column(name="Genre", unique = true, nullable = false)
     private String genero;
-    @Id
-    @GeneratedValue
-    private Long id;
-
 
     public Serie(){}
-
 
     public Serie(String nombreDeSerie, String genero){
         this.setNombreDeSerie(nombreDeSerie);
@@ -40,10 +45,9 @@ public class Serie implements Contenido {
     }
 
     public void agregarTemporada(Temporada unaTemporada) {
-
         this.temporadas.add(unaTemporada);
     }
-    @JsonProperty("number_of_seasons")
+    //@JsonProperty("number_of_seasons")
     public Integer totalSeasons() {
 
         return this.temporadas.size();
@@ -66,7 +70,7 @@ public class Serie implements Contenido {
                 .mapToInt(t -> t.cuantosMinutosDuraLatemporadaCompleta())
                 .sum();
     }
-    @JsonProperty( "number_of_episodes")
+   // @JsonProperty( "number_of_episodes")
     public Integer cantidadDeCapitulosenLaSerie(){
         return this.temporadas.stream()
                 .mapToInt(t->t.sizeTemporada())
