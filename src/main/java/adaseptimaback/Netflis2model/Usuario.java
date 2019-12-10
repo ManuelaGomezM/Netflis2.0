@@ -15,18 +15,14 @@ public class Usuario {
 
     public void ver(Contenido unContenido) {
         this.contenidosVistosPorUsuario.add(unContenido);
-
     }
 
     public Boolean visteCompletoEsto(Contenido unContenido) {
         return unContenido.vistoCompleto(this);
     }
-
-
     public Integer cuantasUnidadesDeContenidoViste() {
         return this.contenidosVistosPorUsuario.size();
     }
-
     public Boolean contenidoFueVisto(Contenido unContenido) {
         return this.contenidosVistosPorUsuario.contains(unContenido);
     }

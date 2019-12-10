@@ -9,13 +9,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Serie implements Contenido {
-  //@JsonProperty ("title")
+
+    //@JsonProperty ("title")
     private String nombreDeSerie;
    // @JsonProperty("actors")
     private List<Actor> actoresFijosDeLaSerie = new ArrayList<>();
-    //@JsonProperty ("seasons")
+   // @JsonProperty ("seasons")
     private List<Temporada> temporadas = new ArrayList<>();
-    //@JsonProperty ("genre")
+   // @JsonProperty ("genre")
     private String genero;
     @Id
     @GeneratedValue
@@ -43,7 +44,7 @@ public class Serie implements Contenido {
 
         this.temporadas.add(unaTemporada);
     }
-    @JsonProperty("number_of_seasons")
+   // @JsonProperty("number_of_seasons")
     public Integer totalSeasons() {
 
         return this.temporadas.size();

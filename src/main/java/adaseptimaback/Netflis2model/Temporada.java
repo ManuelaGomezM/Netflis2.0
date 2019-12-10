@@ -16,7 +16,9 @@ public class Temporada  {
     private Serie serie;
     //@JsonProperty("number")
     private Integer numeroDeTemporada;
+
     //@JsonProperty("Episodes")
+
     private List<Capitulo> capitulos = new ArrayList<>();
 
     public Integer sizeTemporada() {
