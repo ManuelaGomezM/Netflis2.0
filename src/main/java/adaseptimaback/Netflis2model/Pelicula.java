@@ -1,5 +1,7 @@
 package adaseptimaback.Netflis2model;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +9,14 @@ import java.util.stream.Collectors;
 
 
 @Entity
-@Table(name="Pelicula", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 
-@PrimaryKeyJoinColumn(name="emp")
+@Table(name="Pelicula",uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
+@PrimaryKeyJoinColumn(name="IdUC")
 
 public class Pelicula extends UnidadDeContenido {
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "incrementator")
+    @GenericGenerator(name= "incrementator",strategy = "increment")
     @Column(name = "ID", unique = true, nullable = false)
     private List<Actor> actoresDePeliculas = new ArrayList<>();
 

@@ -1,22 +1,34 @@
 package adaseptimaback.Netflis2model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Inheritance(strategy= InheritanceType.JOINED)
-
+@Entity
+@Table(name = "Unidad de Contenido")
+@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class UnidadDeContenido implements Contenido {
+    @Id
+
+    @GeneratedValue(generator = "incrementator")
+
+    @GenericGenerator(name= "incrementator",strategy = "increment")
+    @Column(name="IdUC", unique = true, nullable = false)
+    private Long id;
+    //@JsonProperty ("genre")
+    @Column(name="GenreUC", unique = true, nullable = false)
 
     public String genero;
    // @JsonProperty("title")
+   @Column(name="TitleUC", unique = true, nullable = false)
     private String titulo;
-    @Id
-    @GeneratedValue
-    @Column(name = "ID", unique = true, nullable = false)
-    private Long id;
+
+
    // @JsonProperty("duration")
+   @Column(name="DuracionUC", unique = true, nullable = false)
+
     private Integer duracion;
 
     public UnidadDeContenido(){    }

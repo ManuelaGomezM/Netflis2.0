@@ -1,8 +1,8 @@
 package adaseptimaback.Netflis2model;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
+import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -10,12 +10,13 @@ import java.util.stream.Collectors;
 @Entity
 @Table(name="Capitulo", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 
-
+@PrimaryKeyJoinColumn(name="IdUC")
 
 public class Capitulo extends UnidadDeContenido {
     @Id
-    @GeneratedValue
-    @Column(name="Id")
+    @GeneratedValue(generator = "incrementator")
+    @GenericGenerator(name= "incrementator",strategy = "increment")
+    @Column(name="Id", unique = true, nullable = false)
     private Long id;
 
    // @JsonProperty ("number")
@@ -33,7 +34,8 @@ public class Capitulo extends UnidadDeContenido {
     @Column(name="Serie")
     private Serie serie;
 
-    public Capitulo(){}
+    public Capitulo(){
+         }
 
     public Capitulo(Integer numeroDeCapitulo, Integer duracionDeCapitulo, Temporada temporada, Serie serie) {
         this.numeroDeCapitulo = numeroDeCapitulo;
