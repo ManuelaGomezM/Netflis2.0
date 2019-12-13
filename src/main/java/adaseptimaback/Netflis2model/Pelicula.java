@@ -8,11 +8,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-@Entity
-
-@Table(name="Pelicula",uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
-@PrimaryKeyJoinColumn(name="IdUC")
-
 public class Pelicula extends UnidadDeContenido {
     @Id
     @GeneratedValue(generator = "incrementator")

@@ -6,9 +6,6 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "Unidad de Contenido")
-@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class UnidadDeContenido implements Contenido {
     @Id
 

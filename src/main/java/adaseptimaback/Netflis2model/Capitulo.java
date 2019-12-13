@@ -7,10 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 //Se comentaron las anotations de jackson porque la idea es migrar esa busqueda inicial a la base de datos.
-@Entity
-@Table(name="Capitulo", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 
-@PrimaryKeyJoinColumn(name="IdUC")
 
 public class Capitulo extends UnidadDeContenido {
     @Id

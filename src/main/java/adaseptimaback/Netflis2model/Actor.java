@@ -2,8 +2,6 @@ package adaseptimaback.Netflis2model;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
-@Entity
-@Table(name = "Actores")
 
 public class Actor {
     @Id
