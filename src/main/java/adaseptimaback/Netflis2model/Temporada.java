@@ -16,13 +16,20 @@ public class Temporada  {
     @Column(name="Id", unique = true, nullable = false)
     private Long id;
     //@JsonIgnore
+
     @Column(name="serie", unique = true, nullable = false)
         private Serie serie;
     //@JsonProperty("number")
+
     @Column(name="NumberOfSeason", unique = true, nullable = false)
     private Integer numeroDeTemporada;
+
+    //@JsonProperty("Episodes")
+
+
    // @JsonProperty("Episodes")
    @Column(name="Capitulos", unique = true, nullable = false)
+
     private List<Capitulo> capitulos = new ArrayList<>();
 
     public Integer sizeTemporada() {

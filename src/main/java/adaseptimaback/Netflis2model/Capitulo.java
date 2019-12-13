@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
 @Table(name="Capitulo", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 
 @PrimaryKeyJoinColumn(name="IdUC")
+
 public class Capitulo extends UnidadDeContenido {
     @Id
     @GeneratedValue(generator = "incrementator")
@@ -24,10 +25,12 @@ public class Capitulo extends UnidadDeContenido {
    // @JsonProperty("guest_actors")
     @Column (name= "ActoresInvitadosCap")
     private List<Actor> actoresInvitados = new ArrayList<>();
-   // @JsonIgnore
+
+    //@JsonIgnore
     @Column (name="Temporada")
     private Temporada temporada;
-   // @JsonIgnore
+    //@JsonIgnore
+
     @Column(name="Serie")
     private Serie serie;
 

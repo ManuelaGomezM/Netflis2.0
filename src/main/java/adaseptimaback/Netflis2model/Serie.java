@@ -10,6 +10,9 @@ import java.util.stream.Collectors;
 @Entity
 @Table(name="Serie", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
 public class Serie implements Contenido {
+
+
+    //@JsonProperty ("title")
     @Id
     @GeneratedValue(generator = "incrementator")
     @GenericGenerator(name= "incrementator",strategy = "increment")
@@ -17,6 +20,7 @@ public class Serie implements Contenido {
     private Long id;
      //@JsonProperty ("title")
      @Column(name="Title", unique = true, nullable = false)
+
     private String nombreDeSerie;
    // @JsonProperty("actors")
    @Column(name="ActoresFijos", unique = true, nullable = false)
@@ -47,7 +51,8 @@ public class Serie implements Contenido {
     public void agregarTemporada(Temporada unaTemporada) {
         this.temporadas.add(unaTemporada);
     }
-    //@JsonProperty("number_of_seasons")
+
+
     public Integer totalSeasons() {
 
         return this.temporadas.size();
