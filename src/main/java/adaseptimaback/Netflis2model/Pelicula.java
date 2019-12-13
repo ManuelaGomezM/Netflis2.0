@@ -10,14 +10,19 @@ import java.util.stream.Collectors;
 
 @Entity
 
-@Table(name="Pelicula",uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
+@Table(name="Pelicula",uniqueConstraints = {@UniqueConstraint(columnNames={"IdPelicula"})})
 @PrimaryKeyJoinColumn(name="IdUC")
 
 public class Pelicula extends UnidadDeContenido {
     @Id
     @GeneratedValue(generator = "incrementator")
     @GenericGenerator(name= "incrementator",strategy = "increment")
-    @Column(name = "ID", unique = true, nullable = false)
+    @Column(name = "IdPelicula", unique = true, nullable = false)
+    private Long id;
+
+
+    @OneToMany
+    @JoinColumn(name="IdActor")
     private List<Actor> actoresDePeliculas = new ArrayList<>();
 
     public Pelicula(){}

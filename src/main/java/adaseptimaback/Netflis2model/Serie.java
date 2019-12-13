@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Entity
-@Table(name="Serie", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
+@Table(name="Serie", uniqueConstraints = {@UniqueConstraint(columnNames={"IdSerie"})})
 public class Serie implements Contenido {
 
 
@@ -16,17 +16,21 @@ public class Serie implements Contenido {
     @Id
     @GeneratedValue(generator = "incrementator")
     @GenericGenerator(name= "incrementator",strategy = "increment")
-    @Column(name="Id", unique = true, nullable = false)
+    @Column(name="IdSerie", unique = true, nullable = false)
     private Long id;
      //@JsonProperty ("title")
      @Column(name="Title", unique = true, nullable = false)
-
-    private String nombreDeSerie;
+     private String nombreDeSerie;
    // @JsonProperty("actors")
+   @ManyToMany
+   @JoinColumn(name = "IdActor")
    @Column(name="ActoresFijos", unique = true, nullable = false)
     private List<Actor> actoresFijosDeLaSerie = new ArrayList<>();
    // @JsonProperty ("seasons")
-   @Column(name="Seasons", unique = true, nullable = false)
+
+    @OneToMany
+    @JoinColumn(name= "IdTemporada")
+    //@Column(name="Seasons", unique = true, nullable = false)
     private List<Temporada> temporadas = new ArrayList<>();
    // @JsonProperty ("genre")
    @Column(name="Genre", unique = true, nullable = false)
@@ -115,5 +119,7 @@ public class Serie implements Contenido {
     public void setId(Long id) {
         this.id = id;
     }
+
+    /**sha1 = org.apache.commons.codec.digest.DigestUtils.sha1Hex( value );**/
 }
 

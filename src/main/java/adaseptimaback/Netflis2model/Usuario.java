@@ -11,10 +11,10 @@ import java.util.stream.Collectors;
 
 public class Usuario {
     private List<Contenido> contenidosVistosPorUsuario = new ArrayList<>();
-    @Id
-    @GeneratedValue(generator = "incrementator")
-    @GenericGenerator(name= "incrementator",strategy = "increment")
-    @Column(name="Id", unique = true, nullable = false)
+   // @Id
+    //@GeneratedValue(generator = "incrementator")
+    //@GenericGenerator(name= "incrementator",strategy = "increment")
+    //@Column(name="Id", unique = true, nullable = false)
     private Long id;
     public Usuario(){}
 

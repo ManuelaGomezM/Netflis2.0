@@ -8,16 +8,18 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 @Entity
-@Table(name="Temporada", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
+@Table(name="Temporada", uniqueConstraints = {@UniqueConstraint(columnNames={"IdTemporada"})})
 public class Temporada  {
     @Id
     @GeneratedValue (generator = "incrementator")
     @GenericGenerator(name= "incrementator",strategy = "increment")
-    @Column(name="Id", unique = true, nullable = false)
+    @Column(name="IdTemporada", unique = true, nullable = false)
     private Long id;
     //@JsonIgnore
 
-    @Column(name="serie", unique = true, nullable = false)
+    @ManyToOne
+    @JoinColumn(name= "IdSerie")
+    //@Column(name="serie", unique = true, nullable = false)
         private Serie serie;
     //@JsonProperty("number")
 
@@ -28,6 +30,7 @@ public class Temporada  {
 
 
    // @JsonProperty("Episodes")
+   @Transient
    @Column(name="Capitulos", unique = true, nullable = false)
 
     private List<Capitulo> capitulos = new ArrayList<>();

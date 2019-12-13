@@ -9,7 +9,7 @@ public class Actor {
     @Id
     @GeneratedValue(generator = "incrementator")
     @GenericGenerator(name= "incrementator",strategy = "increment")
-    @Column(name="Id", unique = true, nullable = false)
+    @Column(name="IdActor", unique = true, nullable = false)
 
         private Long id;
         private String name;
@@ -22,22 +22,22 @@ public class Actor {
     }
     public Boolean actuoEn(Contenido contenido){
             return contenido.actuo(this);
-        }
-        public Actor (String name){
+    }
+    public Actor (String name){
             this.name=name;
-        }
-        public String getName() {
+    }
+    public String getName() {
             return name;
-        }
-        public void setName(String name) {
+    }
+    public void setName(String name) {
             this.name = name;
-        }
-        public Long getId() {
+    }
+    public Long getId() {
             return id;
-        }
-        public void setId(Long id) {
+    }
+    public void setId(Long id) {
             this.id = id;
-        }
+    }
 }
 
 

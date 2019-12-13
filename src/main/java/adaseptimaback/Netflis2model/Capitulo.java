@@ -8,30 +8,34 @@ import java.util.List;
 import java.util.stream.Collectors;
 //Se comentaron las anotations de jackson porque la idea es migrar esa busqueda inicial a la base de datos.
 @Entity
-@Table(name="Capitulo", uniqueConstraints = {@UniqueConstraint(columnNames={"Id"})})
+@Table(name="Capitulo", uniqueConstraints = {@UniqueConstraint(columnNames={"IdCapitulo"})})
 
 @PrimaryKeyJoinColumn(name="IdUC")
 
 public class Capitulo extends UnidadDeContenido {
-    @Id
-    @GeneratedValue(generator = "incrementator")
-    @GenericGenerator(name= "incrementator",strategy = "increment")
-    @Column(name="Id", unique = true, nullable = false)
+   @Id
+   @GeneratedValue(generator = "incrementator")
+   @GenericGenerator(name= "incrementator",strategy = "increment")
+   @Column(name="IdCapitulo", unique = true, nullable = false)
     private Long id;
 
    // @JsonProperty ("number")
-    @Column(name= "NumerodeCapitulo")
+   @Column(name= "NumerodeCapitulo")
     private Integer numeroDeCapitulo;
    // @JsonProperty("guest_actors")
-    @Column (name= "ActoresInvitadosCap")
+  @ManyToMany
+  @JoinColumn(name="IdActor")
+  //@Column (name= "ActoresInvitadosCap")
     private List<Actor> actoresInvitados = new ArrayList<>();
 
-    //@JsonIgnore
-    @Column (name="Temporada")
+  @ManyToOne
+  @JoinColumn(name="IdTemporada")
+  //@Column (name="Temporada")
     private Temporada temporada;
-    //@JsonIgnore
-
-    @Column(name="Serie")
+  //@JsonIgnore
+  @ManyToOne
+  @JoinColumn(name="IdSerie")
+  //@Column(name="Serie")
     private Serie serie;
 
     public Capitulo(){

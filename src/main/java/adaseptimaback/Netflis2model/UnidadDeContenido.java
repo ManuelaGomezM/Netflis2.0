@@ -6,28 +6,27 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "Unidad de Contenido")
-@Inheritance(strategy=InheritanceType.JOINED)
+//@Entity
+//@Table(name = "Unidad de Contenido")
+//@Inheritance(strategy=InheritanceType.JOINED)
 public abstract class UnidadDeContenido implements Contenido {
-    @Id
-
-    @GeneratedValue(generator = "incrementator")
-
-    @GenericGenerator(name= "incrementator",strategy = "increment")
-    @Column(name="IdUC", unique = true, nullable = false)
+    //@Id
+    //@GeneratedValue(generator = "incrementator")
+    //@GenericGenerator(name= "incrementator",strategy = "increment")
+    //@Column(name="IdUC", unique = true, nullable = false)
     private Long id;
     //@JsonProperty ("genre")
-    @Column(name="GenreUC", unique = true, nullable = false)
+    //@Column(name="GenreUC", unique = true, nullable = false)
 
     public String genero;
    // @JsonProperty("title")
-   @Column(name="TitleUC", unique = true, nullable = false)
+   //@Column(name="TitleUC", unique = true, nullable = false)
     private String titulo;
 
 
    // @JsonProperty("duration")
-   @Column(name="DuracionUC", unique = true, nullable = false)
+   //
+    // @Column(name="DuracionUC", unique = true, nullable = false)
 
     private Integer duracion;
 
